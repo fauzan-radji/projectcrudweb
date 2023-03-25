@@ -21,9 +21,9 @@ $data = mysqli_fetch_array($profil);
   <meta name="description" content="" />
   <meta name="author" content="" />
   <title>Login</title>
-  <link href="<?= $main_url ?>assets/sb-admin/css/styles.css?<?= time(); ?>" rel="stylesheet" />
+  <link href="<?= app_url('assets/sb-admin/css/styles.css?' . time()) ?>" rel="stylesheet" />
   <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
-  <link rel="icon" type="image/x-icon" href="<?= $main_url ?>assets/images/Japesda-Gorontalo.jpg">
+  <link rel="icon" type="image/x-icon" href="<?= app_url('assets/images/Japesda-Gorontalo.jpg') ?>">
   <style>
     #bgLogin {
       background-image: url("../assets/images/<?= $data['gambar'] ?>");
@@ -85,7 +85,7 @@ $data = mysqli_fetch_array($profil);
   </div>
   </div>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
-  <script src="<?= $main_url ?>assets/sb-admin/js/scripts.js"></script>
+  <script src="<?= app_url('assets/sb-admin/js/scripts.js') ?>"></script>
 </body>
 
 </html>

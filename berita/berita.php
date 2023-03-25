@@ -33,7 +33,7 @@ require_once "../template/sidebar.php";
           <?php if (!isset($_SESSION["login"])) : ?>
             <?php if (isset($rowSession["level"])) : ?>
               <?php if ($rowSession["level"] === "superadmin") : ?>
-                <a href="<?= $main_url ?>berita/add-berita" class="btn btn-sm btn-success float-end"><i class="fa-solid fa-square-plus"></i> Tambah Berita</a>
+                <a href="<?= app_url('berita/add-berita') ?>" class="btn btn-sm btn-success float-end"><i class="fa-solid fa-square-plus"></i> Tambah Berita</a>
               <?php endif; ?>
             <?php endif; ?>
           <?php endif; ?>

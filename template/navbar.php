@@ -1,7 +1,11 @@
+<?php
+require_once '../helper.php';
+?>
+
 <body class="sb-nav-fixed">
   <nav class="sb-topnav navbar navbar-expand bg-light shadow p-3 mb-5 bg-body rounded ">
     <!-- Navbar Brand-->
-    <img src="<?= $main_url ?>assets/images/Japesda-Gorontalo.jpg" alt="Logo" class="me-4 ms-3" width="8%">
+    <img src="<?= app_url('assets/images/Japesda-Gorontalo.jpg') ?>" alt="Logo" class="me-4 ms-3" width="8%">
     <!-- Sidebar Toggle-->
     <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i class="fas fa-bars"></i></button>
     <!-- Navbar Search-->
@@ -15,11 +19,11 @@
       <?php if (!isset($rowSession["level"])) : ?>
         <div class="btn-group profil-user">
           <a href="#" class="btn btn-light dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-            <img src="<?= $main_url ?>assets/images/default.png" alt="" style="width: 40px; height:40px;border-radius:50%; object-fit: cover;">
+            <img src="<?= app_url('assets/images/default.png') ?>" alt="" style="width: 40px; height:40px;border-radius:50%; object-fit: cover;">
             Akun Saya
           </a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="<?= $main_url ?>auth/login">Masuk <i class="fa-solid fa-right-from-bracket"></i></a></li>
+            <li><a class="dropdown-item" href="<?= app_url('auth/login') ?>">Masuk <i class="fa-solid fa-right-from-bracket"></i></a></li>
           </ul>
         </div>
       <?php endif; ?>
@@ -30,11 +34,13 @@
         <!-- Profile -->
         <div class="btn-group profil-user">
           <a href="#" class="btn btn-light dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-            <img src="<?= $main_url ?>assets/images/<?= $rowSession["gambar"]; ?>" alt="" style="width: 40px; height:40px;border-radius:50%; object-fit: cover;">
+            <img src="<?= app_url("assets/images/{$rowSession["gambar"]}") ?>" alt="" style="width: 40px; height:40px;border-radius:50%; object-fit: cover;">
             <?= $rowSession["nama"]; ?>
           </a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="<?= $main_url; ?>account/profile?cmd=<?= base64_encode(base64_encode(base64_encode(base64_encode(base64_encode(base64_encode(base64_encode(base64_encode(base64_encode($rowSession["id"]))))))))); ?>">Akun Saya</a></li>
+            <li><a class="dropdown-item" href="<?= app_url(
+                                                  'account/profile?cmd=' . base64encode($rowSession["id"])
+                                                ); ?>x">Akun Saya</a></li>
             <li>
               <hr class="dropdown-divider">
             </li>
@@ -62,7 +68,7 @@
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
-          <a href="<?= $main_url ?>auth/logout" class="btn btn-danger">Keluar</a>
+          <a href="<?= app_url('auth/logout') ?>" class="btn btn-danger">Keluar</a>
         </div>
       </div>
     </div>

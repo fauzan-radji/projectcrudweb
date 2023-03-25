@@ -147,7 +147,7 @@ if ($msg == 'added') {
 
               </div>
               <div class="col-4 text-center px-5">
-                <img src="<?= $main_url; ?>assets/images/<?= $queryAccountIdUrl["gambar"]; ?>" alt="gambaruser" class="mb-3" style="width: 100px; height:100px; border-radius:50%;object-fit: cover; border:4px solid white; box-shadow:1px 1px 5px #aaa;">
+                <img src="<?= app_url('assets/images/{$queryAccountIdUrl["gambar"]}') ?>" alt="gambaruser" class="mb-3" style="width: 100px; height:100px; border-radius:50%;object-fit: cover; border:4px solid white; box-shadow:1px 1px 5px #aaa;">
                 <input type="file" name="gambar" class="form-control form-control-sm">
                 <small class="text-secondary">Pilih foto PNG, JPG atau JPEG maximal 1 MB</small>
               </div>

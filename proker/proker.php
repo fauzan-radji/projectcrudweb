@@ -32,7 +32,7 @@ require_once "../template/sidebar.php";
           <?php if (!isset($_SESSION["login"])) : ?>
             <?php if (isset($rowSession["level"])) : ?>
               <?php if ($rowSession["level"] === "superadmin") : ?>
-                <a href="<?= $main_url ?>proker/add-proker" class="btn btn-sm btn-success float-end" style="margin-left:10px;"><i class="fa-solid fa-square-plus"></i> Tambah Program</a>
+                <a href="<?= app_url('proker/add-proker') ?>" class="btn btn-sm btn-success float-end" style="margin-left:10px;"><i class="fa-solid fa-square-plus"></i> Tambah Program</a>
               <?php endif; ?>
               <?php if ($rowSession["level"] === "superadmin" or $rowSession["level"] === "direktur") : ?>
                 <a href="#" class="btn btn-sm btn-success float-end" onclick="window.print();"><i class="fa-solid fa-square-plus"></i> Print/Cetak PDF</a>

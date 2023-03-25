@@ -16,7 +16,7 @@ if (isset($_SESSION["ssLogin"])) {
 }
 
 if ($rowSession["level"] === "user") {
-	header("Location:$main_url");
+	header("Location: " . app_url());
 	exit;
 }
 

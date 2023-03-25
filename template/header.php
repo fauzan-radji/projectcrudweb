@@ -1,3 +1,6 @@
+<?php
+require_once '../helper.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,7 +12,7 @@
     <meta name="author" content="" />
     <title><?= $title ?></title>
     <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
-    <link href="<?= $main_url; ?>assets/sb-admin/css/styles.css?<?= time(); ?>" rel="stylesheet" />
-    <link rel="icon" href="<?= $main_url; ?>assets/images/ikonfan.png">
+    <link href="<?= app_url('assets/sb-admin/css/styles.css?' . time()); ?>" rel="stylesheet" />
+    <link rel="icon" href="<?= app_url('assets/images/ikonfan.png'); ?>">
     <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
 </head>

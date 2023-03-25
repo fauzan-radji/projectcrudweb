@@ -1,12 +1,12 @@
 <?php
 
-include 'utils.php';
+include 'helper.php';
 
 // koneksi
-$hostname = env('DB_HOST','localhost');
-$username = env('DB_USER','root');
-$password = env('DB_PASS','');
-$database = env('DB_NAME','db_projectcrudweb');
+$hostname = env('DB_HOST', 'localhost');
+$username = env('DB_USER', 'root');
+$password = env('DB_PASS', '');
+$database = env('DB_NAME', 'db_projectcrudweb');
 $koneksi = mysqli_connect($hostname, $username, $password, $database);
 
 // cek koneksi

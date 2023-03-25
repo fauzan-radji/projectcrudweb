@@ -96,7 +96,7 @@ if ($requestLink === "$urlActive/petaweb/maps") {
     <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
       <div class="sb-sidenav-menu mt-4">
         <div class="nav">
-          <a class="nav-link <?= $dashboardActive; ?>" href="<?= $main_url ?>">
+          <a class="nav-link <?= $dashboardActive; ?>" href="<?= $main_url ?>dashboard">
             <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
             Dashboard
           </a>
