@@ -3,6 +3,7 @@
 require_once '_404.php';
 require_once 'home.php';
 require_once 'dashboard.php';
+require_once 'proker.php';
 require_once 'auth_login.php';
 
 function controller($controller, $data = [])

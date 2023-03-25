@@ -11,7 +11,7 @@
   <link rel="shortcut icon" href="<?= asset('images/logo/favicon.svg') ?>" type="image/x-icon" />
   <link rel="shortcut icon" href="<?= asset('images/logo/favicon.png') ?>" type="image/png" />
 
-  <link rel="stylesheet" href="<?= asset('css/shared/iconly.css') ?>" />
+  <?php section('style') ?>
 </head>
 
 <body>
@@ -27,12 +27,18 @@
       </header>
 
       <div class="page-heading">
-        <h3><?php section('title') ?></h3>
-      </div>
-      <div class="page-content">
-        <section class="row">
-          <?php section('main') ?>
-        </section>
+        <div class="page-title mb-3">
+          <div class="row">
+            <div class="col-12 col-md-6 order-md-1 order-last">
+              <h3><?php section('title') ?></h3>
+            </div>
+            <div class="col-12 col-md-6 order-md-2 order-first">
+              <?php component('breadcrumb') ?>
+            </div>
+          </div>
+        </div>
+
+        <?php section('main') ?>
       </div>
 
       <?php component('footer') ?>
@@ -40,10 +46,6 @@
   </div>
   <script src="<?= asset('js/bootstrap.js') ?>"></script>
   <script src="<?= asset('js/app.js') ?>"></script>
-
-  <!-- Need: Apexcharts -->
-  <script src="<?= asset('extensions/apexcharts/apexcharts.min.js') ?>"></script>
-  <script src="<?= asset('js/pages/dashboard.js') ?>"></script>
 
   <?php section('script') ?>
 </body>

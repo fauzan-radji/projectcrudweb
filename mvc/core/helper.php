@@ -5,7 +5,7 @@ define('ROOT', $_SERVER['DOCUMENT_ROOT'] . '/projectcrudweb/mvc/');
 function env($key)
 {
   $content = file_get_contents(ROOT . '.env');
-  $content = preg_split('/\n/', $content);
+  $content = preg_split('/\r\n/', $content);
   foreach ($content as $line) {
     [$k, $v] = explode('=', $line);
     if ($k === $key) return $v;
@@ -27,14 +27,14 @@ function route($route)
 function view($view, $data = [])
 {
   foreach ($data as $key => $value)
-    ${$key} = $value;
+    $GLOBALS[$key] = $value;
 
   require ROOT . "views/$view.php";
 }
 
 function extend($layout)
 {
-  require ROOT . "views/layouts/$layout.php";
+  require_once ROOT . "views/layouts/$layout.php";
 }
 
 function section($section, $data = [])

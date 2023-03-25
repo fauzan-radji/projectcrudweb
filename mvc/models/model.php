@@ -1,15 +1,15 @@
 <?php
-
-require_once 'user.php';
-
-function model_all($model)
+abstract class Model
 {
-  $model = $model . '_all';
-  return $model();
-}
+  protected static $table;
 
-function model_find($model, $id)
-{
-  $model = $model . '_find';
-  return $model($id);
+  public static function getAll()
+  {
+    return Database::query("SELECT * FROM " . static::$table);
+  }
+
+  public static function find($id)
+  {
+    Database::query("SELECT * FROM " . static::$table . " WHERE id = $id");
+  }
 }

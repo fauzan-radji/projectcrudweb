@@ -1,5 +1,7 @@
 <?php
 
+Database::init();
+
 $path = '/';
 if (isset($_GET['__url']))
   $path = parsePath($_GET['__url']);
