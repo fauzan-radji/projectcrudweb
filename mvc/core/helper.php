@@ -19,9 +19,9 @@ function asset($asset)
   return env('APP_URL') . 'public/' . trim($asset, '/');
 }
 
-function base_url($route)
+function route($route)
 {
-  return env('APP_URL') . 'public' . $route;
+  return env('APP_URL') . trim($route, '/');
 }
 
 function view($view, $data = [])

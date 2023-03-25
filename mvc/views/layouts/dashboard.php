@@ -6,16 +6,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title><?php section('title') ?></title>
 
-  <link rel="stylesheet" href="<?= asset('assets/css/main/app.css') ?>" />
-  <link rel="stylesheet" href="<?= asset('assets/css/main/app-dark.css') ?>" />
-  <link rel="shortcut icon" href="<?= asset('assets/images/logo/favicon.svg') ?>" type="image/x-icon" />
-  <link rel="shortcut icon" href="<?= asset('assets/images/logo/favicon.png') ?>" type="image/png" />
+  <link rel="stylesheet" href="<?= asset('css/main/app.css') ?>" />
+  <link rel="stylesheet" href="<?= asset('css/main/app-dark.css') ?>" />
+  <link rel="shortcut icon" href="<?= asset('images/logo/favicon.svg') ?>" type="image/x-icon" />
+  <link rel="shortcut icon" href="<?= asset('images/logo/favicon.png') ?>" type="image/png" />
 
-  <link rel="stylesheet" href="<?= asset('assets/css/shared/iconly.css') ?>" />
+  <link rel="stylesheet" href="<?= asset('css/shared/iconly.css') ?>" />
 </head>
 
 <body>
-  <script src="<?= asset('assets/js/initTheme.js') ?>"></script>
+  <script src="<?= asset('js/initTheme.js') ?>"></script>
   <div id="app">
     <?php component('sidebar') ?>
 
@@ -38,12 +38,12 @@
       <?php component('footer') ?>
     </div>
   </div>
-  <script src="<?= asset('assets/js/bootstrap.js') ?>"></script>
-  <script src="<?= asset('assets/js/app.js') ?>"></script>
+  <script src="<?= asset('js/bootstrap.js') ?>"></script>
+  <script src="<?= asset('js/app.js') ?>"></script>
 
   <!-- Need: Apexcharts -->
-  <script src="<?= asset('assets/extensions/apexcharts/apexcharts.min.js') ?>"></script>
-  <script src="<?= asset('assets/js/pages/dashboard.js') ?>"></script>
+  <script src="<?= asset('extensions/apexcharts/apexcharts.min.js') ?>"></script>
+  <script src="<?= asset('js/pages/dashboard.js') ?>"></script>
 
   <?php section('script') ?>
 </body>
