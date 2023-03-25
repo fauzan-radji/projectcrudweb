@@ -1,7 +1,13 @@
 <?php
 
+include 'utils.php';
+
 // koneksi
-$koneksi = mysqli_connect("localhost", "root", "", "uici");
+$hostname = env('DB_HOST','localhost');
+$username = env('DB_USER','root');
+$password = env('DB_PASS','');
+$database = env('DB_NAME','db_projectcrudweb');
+$koneksi = mysqli_connect($hostname, $username, $password, $database);
 
 // cek koneksi
 // if (mysqli_connect_errno()) {
