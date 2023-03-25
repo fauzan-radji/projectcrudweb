@@ -1,5 +1,7 @@
 <?php
 
+use function Core\extend;
+
 function title()
 {
 ?>

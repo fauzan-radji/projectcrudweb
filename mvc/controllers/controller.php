@@ -1,16 +1,8 @@
 <?php
 
-require_once '_404.php';
-require_once 'home.php';
-require_once 'dashboard.php';
-require_once 'proker.php';
-require_once 'auth_login.php';
+namespace Controllers;
 
-function controller($controller, $data = [])
+abstract class Controller
 {
-  if (function_exists($controller)) {
-    $controller($data);
-  } else {
-    throw new Error("Controller $controller tidak ada.");
-  }
+  abstract public static function index();
 }

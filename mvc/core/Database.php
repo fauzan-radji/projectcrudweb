@@ -1,4 +1,7 @@
 <?php
+
+namespace Core;
+
 class Database
 {
   private static $host = '';

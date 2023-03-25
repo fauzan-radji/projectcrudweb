@@ -1,4 +1,9 @@
 <?php
+
+namespace Models;
+
+use Core\Database;
+
 abstract class Model
 {
   protected static $table;

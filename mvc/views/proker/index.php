@@ -1,5 +1,8 @@
 <?php
 
+use function Core\asset;
+use function Core\extend;
+
 function title()
 {
 ?>

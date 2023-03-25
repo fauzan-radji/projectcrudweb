@@ -9,7 +9,7 @@ function parsePath($path)
 
 function getController($path)
 {
-  foreach (ROUTES as $route => $controller) {
+  foreach (ROUTES as $route => [$controller, $method]) {
     $regex = '#^' . preg_replace('/\{\w+\}/', '(\w+)', $route) . '$#i';
     if (!preg_match($regex, $path, $matches)) continue;
 
@@ -21,6 +21,7 @@ function getController($path)
 
     return [
       'controller' => $controller,
+      'method' => $method,
       'params' => array_combine($keys, $matches)
     ];
   }

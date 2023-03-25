@@ -1,3 +1,8 @@
+<?php
+
+use function Core\asset;
+use function Core\route;
+?>
 <div id="sidebar" class="active">
   <div class="sidebar-wrapper active">
     <div class="sidebar-header position-relative">

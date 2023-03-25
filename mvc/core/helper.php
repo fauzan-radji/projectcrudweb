@@ -1,5 +1,7 @@
 <?php
 
+namespace Core;
+
 define('ROOT', $_SERVER['DOCUMENT_ROOT'] . '/projectcrudweb/mvc/');
 
 function env($key)

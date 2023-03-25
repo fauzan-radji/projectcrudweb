@@ -1,3 +1,10 @@
+<?php
+
+use function Core\asset;
+use function Core\component;
+use function Core\section;
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
