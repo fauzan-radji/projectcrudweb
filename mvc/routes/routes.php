@@ -1,10 +1,8 @@
 <?php
 define('ROUTES', [
   '/' => 'home',
-  '/about/{nama}/{pekerjaan}' => 'about',
-  '/welcome/{nama}' => 'welcome',
-  '/users' => 'users',
-  '/users/{id}' => 'user_show'
+  '/login' => 'auth_login',
+  '/dashboard' => 'dashboard',
 ]);
 
 define('DEFAULT_CONTROLLER', '_404');
