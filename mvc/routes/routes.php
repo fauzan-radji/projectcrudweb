@@ -24,6 +24,9 @@ define('ROUTES', [
 
   '/user' => [UserController::class, 'show'],
   '/user/edit' => [UserController::class, 'edit'],
+  '/user/editpass' => [UserController::class, 'editpass'],
+  '/user/update' => [UserController::class, 'update'],
+  '/user/updatepass' => [UserController::class, 'updatepass'],
 
   '/proker' => [ProkerController::class, 'index'],
   '/proker/create' => [ProkerController::class, 'create'],

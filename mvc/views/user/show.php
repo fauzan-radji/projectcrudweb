@@ -20,7 +20,8 @@ function main()
       <div class="card">
         <div class="card-header">
           <a href="<?= route("/user/edit") ?>" class="btn icon icon-left btn-outline-primary d-inline-flex align-items-center gap-2"><i class="bi bi-person d-flex align-items-center"></i> Edit Profil</a>
-          <a href="#" class="btn icon icon-left btn-outline-secondary d-inline-flex align-items-center gap-2"><i class="bi bi-pencil d-flex align-items-center"></i> Edit Password</a>
+
+          <a href="<?= route("/user/editpass") ?>" class="btn icon icon-left btn-outline-secondary d-inline-flex align-items-center gap-2"><i class="bi bi-pencil d-flex align-items-center"></i> Edit Password</a>
         </div>
         <div class="card-body">
           <table class="table">
@@ -49,7 +50,7 @@ function main()
     <div class="col-md-4">
       <div class="card">
         <div class="card-body">
-          <img src="<?= uploads($user['gambar']) ?>" alt="<?= $user['nama'] ?>">
+          <img class="img-fluid" src="<?= uploads($user['gambar']) ?>" alt="<?= $user['nama'] ?>">
         </div>
       </div>
     </div>

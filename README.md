@@ -27,10 +27,10 @@
   - [x] Read
   - [x] Update
   - [x] Delete
-- [ ] Akun
+- [x] Akun
   - [x] Read
-  - [ ] Update
-  - [ ] Upload
+  - [x] Update
+  - [x] Upload
 
 # AUTH
 
