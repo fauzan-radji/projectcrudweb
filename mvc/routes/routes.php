@@ -13,6 +13,7 @@ use Controllers\ProkerController;
 define('ROUTES', [
   '/' => [HomeController::class, 'index'],
   '/login' => [AuthController::class, 'login'],
+  '/authenticate' => [AuthController::class, 'authenticate'],
   '/dashboard' => [DashboardController::class, 'index'],
   '/petaweb' => [PetawebController::class, 'index'],
 

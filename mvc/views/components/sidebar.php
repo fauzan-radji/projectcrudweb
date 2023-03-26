@@ -1,5 +1,7 @@
 <?php
 
+use Core\Auth;
+
 use function Core\asset;
 use function Core\route;
 use function Core\routeIs;
@@ -90,6 +92,13 @@ use function Core\routeIs;
           <ul class="submenu">
             <li class="submenu-item">
               <a href="<?= route('/akun') ?>">Akun</a>
+            </li>
+            <li class="submenu-item">
+              <?php if (Auth::auth()) : ?>
+                <a href="<?= route('/logout') ?>">Logout</a>
+              <?php else : ?>
+                <a href="<?= route('/login') ?>">Login</a>
+              <?php endif; ?>
             </li>
           </ul>
         </li>
