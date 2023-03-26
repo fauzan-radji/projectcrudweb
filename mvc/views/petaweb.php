@@ -4,7 +4,7 @@ use function Core\extend;
 
 function title()
 {
-  echo 'Dashboard';
+  echo 'Peta';
 }
 
 function main()
@@ -12,7 +12,11 @@ function main()
 ?>
   <section class="row">
     <div class="col">
-      <h1>Hello World</h1>
+      <div class="card">
+        <div class="card-body">
+          <iframe src="http://localhost/projectcrudweb-maps" frameborder="0" style="width: 100%; aspect-ratio: 16/9;"></iframe>
+        </div>
+      </div>
     </div>
   </section>
 <?php

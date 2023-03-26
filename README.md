@@ -21,12 +21,12 @@
   - [x] Read
   - [x] Update
   - [x] Delete
-- [ ] Berita
-  - [ ] Create
-  - [ ] Upload
-  - [ ] Read
-  - [ ] Update
-  - [ ] Delete
+- [x] Berita
+  - [x] Create
+  - [x] Upload
+  - [x] Read
+  - [x] Update
+  - [x] Delete
 - [ ] Akun
   - [ ] Create
   - [ ] Read

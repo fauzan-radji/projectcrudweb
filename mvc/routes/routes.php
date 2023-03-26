@@ -7,12 +7,14 @@ use Controllers\DashboardController;
 use Controllers\EventController;
 use Controllers\GaleriController;
 use Controllers\HomeController;
+use Controllers\PetawebController;
 use Controllers\ProkerController;
 
 define('ROUTES', [
   '/' => [HomeController::class, 'index'],
   '/login' => [AuthController::class, 'login'],
   '/dashboard' => [DashboardController::class, 'index'],
+  '/petaweb' => [PetawebController::class, 'index'],
 
   '/proker' => [ProkerController::class, 'index'],
   '/proker/create' => [ProkerController::class, 'create'],
