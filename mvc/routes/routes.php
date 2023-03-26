@@ -4,6 +4,7 @@ use Controllers\_404Controller;
 use Controllers\AuthController;
 use Controllers\DashboardController;
 use Controllers\EventController;
+use Controllers\GaleriController;
 use Controllers\HomeController;
 use Controllers\ProkerController;
 
@@ -27,6 +28,14 @@ define('ROUTES', [
   '/event/{id}/edit' => [EventController::class, 'edit'],
   '/event/{id}/update' => [EventController::class, 'update'],
   '/event/{id}/destroy' => [EventController::class, 'destroy'],
+
+  '/galeri' => [GaleriController::class, 'index'],
+  '/galeri/create' => [GaleriController::class, 'create'],
+  '/galeri/store' => [GaleriController::class, 'store'],
+  '/galeri/{id}' => [GaleriController::class, 'show'],
+  '/galeri/{id}/edit' => [GaleriController::class, 'edit'],
+  '/galeri/{id}/update' => [GaleriController::class, 'update'],
+  '/galeri/{id}/destroy' => [GaleriController::class, 'destroy'],
 ]);
 
 define('DEFAULT_CONTROLLER', _404Controller::class);

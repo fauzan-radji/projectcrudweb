@@ -9,18 +9,18 @@
   - [x] Read
   - [x] Update
   - [x] Delete
-- [ ] Event
+- [x] Event
   - [x] Create
-  - [ ] Upload
+  - [x] Upload
   - [x] Read
   - [x] Update
   - [x] Delete
-- [ ] Galeri
-  - [ ] Create
-  - [ ] Upload
-  - [ ] Read
-  - [ ] Update
-  - [ ] Delete
+- [x] Galeri
+  - [x] Create
+  - [x] Upload
+  - [x] Read
+  - [x] Update
+  - [x] Delete
 - [ ] Berita
   - [ ] Create
   - [ ] Upload
@@ -43,3 +43,4 @@
 
 - [ ] App name
 - [ ] Breadcrumb
+- [ ] Live image preview on Create and Update form
