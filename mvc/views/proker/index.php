@@ -59,7 +59,7 @@ function main()
                 <td><?= $proker['waktukeg'] ?></td>
                 <td><?= $proker['tempatkeg'] ?></td>
                 <td>
-                  <button class="badge text-bg-info rounded-3 border-0"><i class="bi bi-info-circle"></i></button>
+                  <a href="<?= route("/proker/{$proker['id_proker']}") ?>" class="badge text-bg-info rounded-3"><i class="bi bi-info-circle"></i></a>
                   <button class="badge text-bg-warning rounded-3 border-0"><i class="bi bi-pencil"></i></button>
                   <button class="badge text-bg-danger rounded-3 border-0"><i class="bi bi-trash"></i></button>
                 </td>

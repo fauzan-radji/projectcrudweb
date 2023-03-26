@@ -41,4 +41,11 @@ class ProkerController extends Controller
 
     return redirect('/proker');
   }
+
+  public static function show($id)
+  {
+    $proker = Proker::find($id, 'id_proker');
+
+    return view('proker/show', ['proker' => $proker]);
+  }
 }

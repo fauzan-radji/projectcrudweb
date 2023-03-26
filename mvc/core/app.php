@@ -28,5 +28,5 @@ $controller = 'Controllers\\' . $controller;
 if (!method_exists($controller, $method)) {
   throw new Error("Tidak ada method $method dalam controller $controller");
 } else {
-  $controller::$method($params);
+  call_user_func_array([$controller, $method], $params);
 }

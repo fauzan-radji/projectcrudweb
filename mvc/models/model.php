@@ -14,10 +14,10 @@ abstract class Model
     return Database::fetch($result);
   }
 
-  public static function find($id)
+  public static function find($id, $column = 'id')
   {
-    $result = Database::query("SELECT * FROM " . static::$table . " WHERE id = $id");
-    return Database::fetch($result);
+    $result = Database::query("SELECT * FROM " . static::$table . " WHERE $column = $id");
+    return Database::fetch($result)[0];
   }
 
   public static function insert($values)

@@ -10,10 +10,10 @@ function parsePath($path)
 function getController($path)
 {
   foreach (ROUTES as $route => [$controller, $method]) {
-    $regex = '#^' . preg_replace('/\{\w+\}/', '(\w+)', $route) . '$#i';
+    $regex = '#^' . preg_replace('/\{\w+\}/', '([\w\s]+)', $route) . '$#i';
     if (!preg_match($regex, $path, $matches)) continue;
 
-    $regex = str_replace('(\w+)', '\{(\w+)\}', $regex);
+    $regex = str_replace('([\w\s]+)', '\{(\w+)\}', $regex);
     preg_match($regex, $route, $keys);
 
     array_shift($matches);
