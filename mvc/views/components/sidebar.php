@@ -54,52 +54,32 @@ use function Core\routeIs;
           </a>
         </li>
 
-        <li class="sidebar-item <?= routeIs('/event') ? 'active' : '' ?> has-sub">
-          <a href="#" class="sidebar-link">
+        <li class="sidebar-item <?= routeIs('/event') ? 'active' : '' ?>">
+          <a href="<?= route('/event') ?>" class="sidebar-link">
             <i class="bi bi-calendar-event"></i>
             <span>Event</span>
           </a>
-          <ul class="submenu">
-            <li class="submenu-item">
-              <a href="<?= route('/event') ?>">Event</a>
-            </li>
-          </ul>
         </li>
 
-        <li class="sidebar-item <?= routeIs('/galeri') ? 'active' : '' ?> has-sub">
-          <a href="#" class="sidebar-link">
+        <li class="sidebar-item <?= routeIs('/galeri') ? 'active' : '' ?>">
+          <a href="<?= route('/galeri') ?>" class="sidebar-link">
             <i class="bi bi-image-fill"></i>
             <span>Galeri</span>
           </a>
-          <ul class="submenu">
-            <li class="submenu-item">
-              <a href="<?= route('/galeri') ?>">Galeri</a>
-            </li>
-          </ul>
         </li>
 
-        <li class="sidebar-item <?= routeIs('/berita') ? 'active' : '' ?> has-sub">
-          <a href="#" class="sidebar-link">
+        <li class="sidebar-item <?= routeIs('/berita') ? 'active' : '' ?>">
+          <a href="<?= route('/berita') ?>" class="sidebar-link">
             <i class="bi bi-newspaper"></i>
             <span>Berita</span>
           </a>
-          <ul class="submenu">
-            <li class="submenu-item">
-              <a href="<?= route('/berita') ?>">Berita</a>
-            </li>
-          </ul>
         </li>
 
-        <li class="sidebar-item <?= routeIs('/petaweb') ? 'active' : '' ?> has-sub">
-          <a href="#" class="sidebar-link">
+        <li class="sidebar-item <?= routeIs('/petaweb') ? 'active' : '' ?>">
+          <a href="<?= route('/petaweb') ?>" class="sidebar-link">
             <i class="bi bi-map-fill"></i>
             <span>Peta</span>
           </a>
-          <ul class="submenu">
-            <li class="submenu-item">
-              <a href="<?= route('/petaweb') ?>">Peta</a>
-            </li>
-          </ul>
         </li>
 
         <li class="sidebar-item <?= routeIs('/akun') ? 'active' : '' ?> has-sub">

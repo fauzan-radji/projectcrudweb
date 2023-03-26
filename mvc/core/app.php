@@ -24,7 +24,6 @@ if (isset($route)) {
   $params = $route['params'];
 }
 
-$controller = 'Controllers\\' . $controller;
 if (!method_exists($controller, $method)) {
   throw new Error("Tidak ada method $method dalam controller $controller");
 } else {

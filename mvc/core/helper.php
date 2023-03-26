@@ -21,6 +21,11 @@ function asset($asset)
   return env('APP_URL') . 'public/' . trim($asset, '/');
 }
 
+function uploads($asset)
+{
+  return env('APP_URL') . 'uploads/' . trim($asset, '/');
+}
+
 function route($route)
 {
   return env('APP_URL') . trim($route, '/');

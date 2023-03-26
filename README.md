@@ -10,11 +10,11 @@
   - [x] Update
   - [x] Delete
 - [ ] Event
-  - [ ] Create
+  - [x] Create
   - [ ] Upload
-  - [ ] Read
-  - [ ] Update
-  - [ ] Delete
+  - [x] Read
+  - [x] Update
+  - [x] Delete
 - [ ] Galeri
   - [ ] Create
   - [ ] Upload
