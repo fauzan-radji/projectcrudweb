@@ -27,7 +27,7 @@ function main()
               <div class="form-body">
                 <div class="row">
                   <div class="col">
-                    <img class="img-fluid" src="<?= uploads($galeri['gambar']) ?>" alt="<?= $galeri['judul'] ?>">
+                    <img id="preview" class="img-fluid" src="<?= uploads($galeri['gambar']) ?>" alt="<?= $galeri['judul'] ?>">
                   </div>
                 </div>
                 <div class="d-flex justify-content-center mt-3">
@@ -76,6 +76,18 @@ function main()
       </div>
     </div>
   </form>
+<?php
+}
+
+function script()
+{
+?>
+  <script src="<?= asset('js/imagePreview.js') ?>"></script>
+  <script>
+    const gambar = document.getElementById('gambar');
+    const preview = document.getElementById('preview');
+    imagePreview(gambar, preview);
+  </script>
 <?php
 }
 

@@ -1,5 +1,6 @@
 <?php
 
+use function Core\asset;
 use function Core\extend;
 use function Core\route;
 use function Core\uploads;
@@ -52,7 +53,7 @@ function main()
           <div class="card-body">
             <div class="row">
               <div class="col-12 mb-3">
-                <img class="img-fluid" src="<?= uploads($user['gambar']) ?>" alt="<?= $user['nama'] ?>">
+                <img id="preview" class="img-fluid" src="<?= uploads($user['gambar']) ?>" alt="<?= $user['nama'] ?>">
               </div>
               <div class="col-12 text-center">
                 <label class="btn btn-primary" for="gambar">Pilih Gambar</label>
@@ -70,8 +71,11 @@ function main()
 function script()
 {
 ?>
+  <script src="<?= asset('js/imagePreview.js') ?>"></script>
   <script>
-    console.log('hello world')
+    const gambar = document.getElementById('gambar');
+    const preview = document.getElementById('preview');
+    imagePreview(gambar, preview);
   </script>
 <?php
 }

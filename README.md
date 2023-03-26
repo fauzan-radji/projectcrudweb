@@ -44,7 +44,7 @@
 - [x] Dashboard
 - [x] Breadcrumb
 - [x] Sidebar active menu
-- [ ] Live image preview on Create and Update form
+- [x] Live image preview on Create and Update form
 - [x] Gambar di halaman login
 - [x] Favicon
 - [ ] Refactoring
