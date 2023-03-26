@@ -46,7 +46,7 @@ class ProkerController extends Controller
     ]);
 
     if ($result) set_success("Berhasil menambah data proker $namakeg");
-    else set_error("Berhasil menambah data proker $namakeg");
+    else set_error("Gagal menambah data proker $namakeg");
 
     return redirect('/proker');
   }
@@ -93,7 +93,7 @@ class ProkerController extends Controller
     ], 'id_proker');
 
     if ($result) set_success("Berhasil mengupdate data proker $namakeg");
-    else set_error("Berhasil mengupdate data proker $namakeg");
+    else set_error("Gagal mengupdate data proker $namakeg");
 
     return redirect('/proker');
   }
@@ -104,7 +104,7 @@ class ProkerController extends Controller
     $result = Proker::delete($id, 'id_proker');
 
     if ($result) set_success("Berhasil menghapus data proker {$proker['namakeg']}");
-    else set_error("Berhasil menghapus data proker {$proker['namakeg']}");
+    else set_error("Gagal menghapus data proker {$proker['namakeg']}");
 
     return redirect('/proker');
   }

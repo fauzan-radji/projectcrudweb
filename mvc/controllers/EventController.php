@@ -2,6 +2,7 @@
 
 namespace Controllers;
 
+use Core\Storage;
 use Models\Event;
 
 use function Core\redirect;
@@ -35,18 +36,26 @@ class EventController extends Controller
   public static function store()
   {
     $judul  = htmlspecialchars($_POST['judul']);
-    // $gambar  = htmlspecialchars($_POST['gambar']);
     $gambar = '';
+    // $gambar  = htmlspecialchars($_POST['gambar']);
     $isievent = htmlspecialchars($_POST['isievent']);
     $status  = htmlspecialchars($_POST['status']);
     $tanggal  = htmlspecialchars($_POST['tanggal']);
+
+    $result = Storage::upload($_FILES['gambar']);
+    if ($result['error']) {
+      set_error($result['error']);
+      return redirect('/event/create');
+    } else {
+      $gambar = $result['filename'];
+    }
 
     $result = Event::insert([
       "''", "'$judul'", "'$gambar'", "'$isievent'", "'$status'", "'$tanggal'"
     ]);
 
     if ($result) set_success("Berhasil menambah data event $judul");
-    else set_error("Berhasil menambah data event $judul");
+    else set_error("Gagal menambah data event $judul");
 
     return redirect('/event');
   }
@@ -77,11 +86,21 @@ class EventController extends Controller
   public static function update($id)
   {
     $judul  = htmlspecialchars($_POST['judul']);
-    // $gambar  = htmlspecialchars($_POST['gambar']);
-    $gambar  = '';
     $isievent = htmlspecialchars($_POST['isievent']);
     $status  = htmlspecialchars($_POST['status']);
     $tanggal  = htmlspecialchars($_POST['tanggal']);
+    $event = Event::find($id, 'id_event');
+    $gambar  = $event['gambar'];
+    if (is_uploaded_file($_FILES['gambar']['tmp_name'])) {
+      $result = Storage::upload($_FILES['gambar']);
+      if ($result['error']) {
+        set_error($result['error']);
+        return redirect("/event/$id/update");
+      } else {
+        Storage::delete($gambar);
+        $gambar = $result['filename'];
+      }
+    }
 
     $result = Event::update($id, [
       "judul" => "'$judul'",
@@ -92,7 +111,7 @@ class EventController extends Controller
     ], 'id_event');
 
     if ($result) set_success("Berhasil mengupdate data event $judul");
-    else set_error("Berhasil mengupdate data event $judul");
+    else set_error("Gagal mengupdate data event $judul");
 
     return redirect('/event');
   }
@@ -101,9 +120,10 @@ class EventController extends Controller
   {
     $event = Event::find($id, 'id_event');
     $result = Event::delete($id, 'id_event');
+    Storage::delete($event['gambar']);
 
     if ($result) set_success("Berhasil menghapus data event {$event['judul']}");
-    else set_error("Berhasil menghapus data event {$event['judul']}");
+    else set_error("Gagal menghapus data event {$event['judul']}");
 
     return redirect('/event');
   }

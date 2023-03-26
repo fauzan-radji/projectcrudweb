@@ -14,7 +14,7 @@ function main()
 {
   global $event;
 ?>
-  <form action="<?= route("/event/{$event['id_event']}/update") ?>" method="post">
+  <form action="<?= route("/event/{$event['id_event']}/update") ?>" method="post" enctype="multipart/form-data">
     <div class="row">
       <div class="col-md-4">
         <div class="card">
