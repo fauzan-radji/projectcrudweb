@@ -89,8 +89,8 @@ use function Core\routeIs;
             <i class="bi bi-person-badge-fill"></i>
             <span>Akun</span>
           </a>
-          <ul class="submenu">
-            <li class="submenu-item">
+          <ul class="submenu <?= routeIs('/akun') ? 'active' : '' ?>">
+            <li class="submenu-item <?= routeIs('/akun') ? 'active' : '' ?>">
               <a href="<?= route('/akun') ?>">Akun</a>
             </li>
             <li class="submenu-item">

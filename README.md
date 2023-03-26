@@ -28,14 +28,13 @@
   - [x] Update
   - [x] Delete
 - [ ] Akun
-  - [ ] Create
   - [ ] Read
   - [ ] Update
   - [ ] Delete
 
 # AUTH
 
-- [ ] Login
+- [x] Login
 - [ ] Logout
 - [ ] Authorization
 

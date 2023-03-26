@@ -1,6 +1,10 @@
 <?php
 
+use Core\Session;
+
 use function Core\asset;
+use function Core\get_error;
+use function Core\get_success;
 use function Core\section;
 
 ?>
@@ -68,6 +72,16 @@ use function Core\section;
   <!--===============================================================================================-->
   <script src="<?= asset('auth/js/main.js') ?>"></script>
 
+  <!-- Custom Script -->
+  <script>
+    <?php if (Session::has('error')) : ?>
+      alert('<?= get_error() ?>')
+    <?php endif; ?>
+
+    <?php if (Session::has('success')) : ?>
+      alert('<?= get_success() ?>')
+    <?php endif; ?>
+  </script>
 </body>
 
 </html>

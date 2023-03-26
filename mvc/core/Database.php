@@ -34,4 +34,9 @@ class Database
 
     return $data;
   }
+
+  public static function num_rows($result)
+  {
+    return mysqli_num_rows($result);
+  }
 }

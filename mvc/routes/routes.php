@@ -12,6 +12,7 @@ use Controllers\ProkerController;
 
 define('ROUTES', [
   '/' => [HomeController::class, 'index'],
+  '/akun' => [AuthController::class, 'index'],
   '/login' => [AuthController::class, 'login'],
   '/authenticate' => [AuthController::class, 'authenticate'],
   '/dashboard' => [DashboardController::class, 'index'],
