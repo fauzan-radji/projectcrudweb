@@ -10,17 +10,20 @@ use Controllers\GaleriController;
 use Controllers\HomeController;
 use Controllers\PetawebController;
 use Controllers\ProkerController;
+use Controllers\UserController;
 
 define('ROUTES', [
   '/error/403' => [_403Controller::class, 'index'],
 
   '/' => [HomeController::class, 'index'],
-  '/akun' => [AuthController::class, 'index'],
   '/login' => [AuthController::class, 'login'],
   '/logout' => [AuthController::class, 'logout'],
   '/authenticate' => [AuthController::class, 'authenticate'],
   '/dashboard' => [DashboardController::class, 'index'],
   '/petaweb' => [PetawebController::class, 'index'],
+
+  '/user' => [UserController::class, 'show'],
+  '/user/edit' => [UserController::class, 'edit'],
 
   '/proker' => [ProkerController::class, 'index'],
   '/proker/create' => [ProkerController::class, 'create'],

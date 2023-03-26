@@ -84,15 +84,15 @@ use function Core\routeIs;
           </a>
         </li>
 
-        <li class="sidebar-item <?= routeIs('/akun') ? 'active' : '' ?> has-sub">
+        <li class="sidebar-item <?= routeIs('/user') ? 'active' : '' ?> has-sub">
           <a href="#" class="sidebar-link">
             <i class="bi bi-person-badge-fill"></i>
             <span>Akun</span>
           </a>
-          <ul class="submenu <?= routeIs('/akun') ? 'active' : '' ?>">
+          <ul class="submenu <?= routeIs('/user') ? 'active' : '' ?>">
             <?php if (Auth::auth()) : ?>
-              <li class="submenu-item <?= routeIs('/akun') ? 'active' : '' ?>">
-                <a href="<?= route('/akun') ?>">Akun</a>
+              <li class="submenu-item <?= routeIs('/user') ? 'active' : '' ?>">
+                <a href="<?= route('/user') ?>">Akun Saya</a>
               </li>
             <?php endif; ?>
             <li class="submenu-item">

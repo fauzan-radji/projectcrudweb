@@ -14,7 +14,6 @@ class AuthController extends Controller
 {
   public static function index()
   {
-    return view('auth/index');
   }
 
   public static function login()

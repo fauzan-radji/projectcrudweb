@@ -5,14 +5,17 @@ namespace Controllers;
 use Core\Auth;
 
 use function Core\redirect;
-use function Core\view;
 
 abstract class Controller
 {
   abstract public static function index();
 
-  public static function authorize($level)
+  public static function authorize(...$levels)
   {
-    if (!Auth::is($level)) return redirect('/error/403');
+    foreach ($levels as $level) {
+      if (Auth::is($level)) return;
+    }
+
+    return redirect('/error/403');
   }
 }

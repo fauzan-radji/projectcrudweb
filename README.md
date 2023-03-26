@@ -28,8 +28,9 @@
   - [x] Update
   - [x] Delete
 - [ ] Akun
-  - [ ] Read
+  - [x] Read
   - [ ] Update
+  - [ ] Upload
 
 # AUTH
 
