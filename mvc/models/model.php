@@ -38,4 +38,10 @@ abstract class Model
   {
     return Database::query("DELETE FROM " . static::$table . " WHERE $column = $id");
   }
+
+  public static function count()
+  {
+    $result = Database::query('SELECT COUNT(*) AS row_count FROM ' . static::$table);
+    return Database::fetch($result)[0]['row_count'];
+  }
 }

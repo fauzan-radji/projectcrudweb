@@ -41,7 +41,7 @@
 # Finishing
 
 - [ ] App name
-- [ ] Dashboard
+- [x] Dashboard
 - [ ] Breadcrumb
 - [ ] Sidebar active menu
 - [ ] Live image preview on Create and Update form
