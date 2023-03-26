@@ -2,7 +2,7 @@
 
 namespace Core;
 
-define('ROOT', $_SERVER['DOCUMENT_ROOT'] . '/projectcrudweb/mvc/');
+define('ROOT', $_SERVER['DOCUMENT_ROOT'] . '/projectcrudweb/');
 
 function env($key)
 {
