@@ -39,9 +39,6 @@ function main()
             <tr>
               <th>#</th>
               <th>Nama Program</th>
-              <!-- <th>Tujuan</th>
-              <th>Sasaran</th>
-              <th>Sumber Dana</th> -->
               <th>Waktu</th>
               <th>Tempat</th>
               <th>Aksi</th>
@@ -53,14 +50,14 @@ function main()
               <tr>
                 <td><?= $no++ ?></td>
                 <td><?= $proker['namakeg'] ?></td>
-                <!-- <td><?= $proker['tujuankeg'] ?></td>
-                <td><?= $proker['sasarankeg'] ?></td>
-                <td><?= $proker['danakeg'] ?></td> -->
-                <td><?= $proker['waktukeg'] ?></td>
+                <td><?= date('d-m-Y', strtotime($proker['waktukeg'])) ?></td>
                 <td><?= $proker['tempatkeg'] ?></td>
                 <td>
+                  <!-- detail -->
                   <a href="<?= route("/proker/{$proker['id_proker']}") ?>" class="badge text-bg-info rounded-3"><i class="bi bi-info-circle"></i></a>
-                  <button class="badge text-bg-warning rounded-3 border-0"><i class="bi bi-pencil"></i></button>
+                  <!-- edit -->
+                  <a href="<?= route("/proker/{$proker['id_proker']}/edit") ?>" class="badge text-bg-warning rounded-3"><i class="bi bi-pencil"></i></a>
+                  <!-- delete -->
                   <button class="badge text-bg-danger rounded-3 border-0"><i class="bi bi-trash"></i></button>
                 </td>
               </tr>

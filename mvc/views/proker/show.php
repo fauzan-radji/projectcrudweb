@@ -42,7 +42,7 @@ function main()
               <tr>
                 <th>Waktu</th>
                 <td>:</td>
-                <td><?= $proker['waktukeg'] ?></td>
+                <td><?= date('j F Y', strtotime($proker['waktukeg'])) ?></td>
               </tr>
               <tr>
                 <th>Tempat</th>

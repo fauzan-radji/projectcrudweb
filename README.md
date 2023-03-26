@@ -6,7 +6,7 @@
 
 - [ ] Proker
   - [x] Create
-  - [ ] Read
+  - [x] Read
   - [ ] Update
   - [ ] Delete
 - [ ] Event

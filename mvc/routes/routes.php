@@ -8,6 +8,8 @@ define('ROUTES', [
   '/proker/create' => [ProkerController::class, 'create'],
   '/proker/store' => [ProkerController::class, 'store'],
   '/proker/{id}' => [ProkerController::class, 'show'],
+  '/proker/{id}/edit' => [ProkerController::class, 'edit'],
+  '/proker/{id}/update' => [ProkerController::class, 'update'],
 ]);
 
 define('DEFAULT_CONTROLLER', _404Controller::class);
