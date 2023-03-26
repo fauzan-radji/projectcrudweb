@@ -40,11 +40,11 @@
 
 # Finishing
 
-- [ ] App name
+- [x] App name
 - [x] Dashboard
 - [x] Breadcrumb
 - [x] Sidebar active menu
 - [ ] Live image preview on Create and Update form
-- [ ] Gambar di halaman login
-- [ ] Favicon
+- [x] Gambar di halaman login
+- [x] Favicon
 - [ ] Refactoring

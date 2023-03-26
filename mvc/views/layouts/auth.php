@@ -16,7 +16,7 @@ use function Core\section;
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!--===============================================================================================-->
-  <link rel="icon" type="image/png" href="<?= asset('auth/images/icons/favicon.ico') ?>" />
+  <link rel="icon" type="image/png" href="<?= asset('favicon.jpg') ?>" />
   <!--===============================================================================================-->
   <link rel="stylesheet" type="text/css" href="<?= asset('auth/vendor/bootstrap/css/bootstrap.min.css') ?>">
   <!--===============================================================================================-->
@@ -41,7 +41,7 @@ use function Core\section;
 
 <body>
   <div class="limiter">
-    <div class="container-login100" style="background-image: url('<?= asset('auth/images/bg-01.jpg') ?>');">
+    <div class="container-login100" style="background-image: url('<?= asset('auth/images/bg-02.jpg') ?>');">
       <div class="wrap-login100 p-t-30 p-b-50">
         <span class="login100-form-title p-b-41">
           <?php section('title') ?>

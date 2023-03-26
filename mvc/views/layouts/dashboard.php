@@ -17,8 +17,7 @@ use function Core\section;
 
   <link rel="stylesheet" href="<?= asset('css/main/app.css') ?>" />
   <link rel="stylesheet" href="<?= asset('css/main/app-dark.css') ?>" />
-  <link rel="shortcut icon" href="<?= asset('images/logo/favicon.svg') ?>" type="image/x-icon" />
-  <link rel="shortcut icon" href="<?= asset('images/logo/favicon.png') ?>" type="image/png" />
+  <link rel="icon" type="image/png" href="<?= asset('favicon.jpg') ?>" />
 
   <!-- Sweetalert -->
   <link rel="stylesheet" href="<?= asset('extensions/sweetalert2/sweetalert2.min.css') ?>" />
