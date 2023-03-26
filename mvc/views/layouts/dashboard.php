@@ -2,6 +2,8 @@
 
 use function Core\asset;
 use function Core\component;
+use function Core\get_error;
+use function Core\get_success;
 use function Core\section;
 
 ?>
@@ -17,6 +19,9 @@ use function Core\section;
   <link rel="stylesheet" href="<?= asset('css/main/app-dark.css') ?>" />
   <link rel="shortcut icon" href="<?= asset('images/logo/favicon.svg') ?>" type="image/x-icon" />
   <link rel="shortcut icon" href="<?= asset('images/logo/favicon.png') ?>" type="image/png" />
+
+  <!-- Sweetalert -->
+  <link rel="stylesheet" href="<?= asset('extensions/sweetalert2/sweetalert2.min.css') ?>" />
 
   <?php section('style') ?>
 </head>
@@ -53,6 +58,34 @@ use function Core\section;
   </div>
   <script src="<?= asset('js/bootstrap.js') ?>"></script>
   <script src="<?= asset('js/app.js') ?>"></script>
+
+  <!-- Sweetalert -->
+  <script src="<?= asset('extensions/sweetalert2/sweetalert2.min.js') ?>"></script>
+  <script>
+    <?php
+    $error = get_error();
+    if ($error) :
+    ?>
+      Swal.fire({
+        icon: "error",
+        title: "Error",
+        text: "<?= $error ?>"
+      })
+    <?php
+    endif;
+
+    $success = get_success();
+    if ($success) :
+    ?>
+      Swal.fire({
+        icon: "success",
+        title: "Success",
+        text: "<?= $success ?>"
+      })
+    <?php
+    endif;
+    ?>
+  </script>
 
   <?php section('script') ?>
 </body>

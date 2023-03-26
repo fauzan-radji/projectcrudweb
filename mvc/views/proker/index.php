@@ -2,6 +2,7 @@
 
 use function Core\asset;
 use function Core\extend;
+use function Core\route;
 
 function title()
 {
@@ -25,18 +26,25 @@ function main()
 ?>
   <section class="section">
     <div class="card">
-      <div class="card-header">Program Kerja</div>
+      <div class="card-header d-flex justify-content-between">
+        <span>Program Kerja</span>
+        <a class="btn btn-sm btn-primary icon icon-left d-flex align-items-center gap-2" href="<?= route('/proker/create') ?>">
+          <i class="bi bi-plus-square d-flex align-items-center"></i>
+          <span>Tambah Proker</span>
+        </a>
+      </div>
       <div class="card-body">
         <table class="table" id="table-proker">
           <thead>
             <tr>
               <th>#</th>
               <th>Nama Program</th>
-              <th>Tujuan</th>
+              <!-- <th>Tujuan</th>
               <th>Sasaran</th>
-              <th>Sumber Dana</th>
+              <th>Sumber Dana</th> -->
               <th>Waktu</th>
               <th>Tempat</th>
+              <th>Aksi</th>
             </tr>
           </thead>
           <tbody>
@@ -45,11 +53,16 @@ function main()
               <tr>
                 <td><?= $no++ ?></td>
                 <td><?= $proker['namakeg'] ?></td>
-                <td><?= $proker['tujuankeg'] ?></td>
+                <!-- <td><?= $proker['tujuankeg'] ?></td>
                 <td><?= $proker['sasarankeg'] ?></td>
-                <td><?= $proker['danakeg'] ?></td>
+                <td><?= $proker['danakeg'] ?></td> -->
                 <td><?= $proker['waktukeg'] ?></td>
                 <td><?= $proker['tempatkeg'] ?></td>
+                <td>
+                  <button class="badge text-bg-info rounded-3 border-0"><i class="bi bi-info-circle"></i></button>
+                  <button class="badge text-bg-warning rounded-3 border-0"><i class="bi bi-pencil"></i></button>
+                  <button class="badge text-bg-danger rounded-3 border-0"><i class="bi bi-trash"></i></button>
+                </td>
               </tr>
             <?php endforeach; ?>
           </tbody>

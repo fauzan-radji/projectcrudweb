@@ -4,6 +4,8 @@ namespace Core;
 
 use Error;
 
+session_start();
+
 Database::init();
 
 $path = '/';
@@ -17,11 +19,12 @@ $method = DEFAULT_METHOD;
 $params = [];
 
 if (isset($route)) {
-  $controller = 'Controllers\\' . $route['controller'];
+  $controller = $route['controller'];
   $method = $route['method'];
   $params = $route['params'];
 }
 
+$controller = 'Controllers\\' . $controller;
 if (!method_exists($controller, $method)) {
   throw new Error("Tidak ada method $method dalam controller $controller");
 } else {

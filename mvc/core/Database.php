@@ -22,9 +22,13 @@ class Database
 
   public static function query($query)
   {
-    $result = mysqli_query(self::$connection, $query);
+    return mysqli_query(self::$connection, $query);
+  }
+
+  public static function fetch($mysqli_result)
+  {
     $data = [];
-    while ($datum = mysqli_fetch_assoc($result)) {
+    while ($datum = mysqli_fetch_assoc($mysqli_result)) {
       $data[] = $datum;
     }
 

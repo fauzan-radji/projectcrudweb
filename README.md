@@ -2,7 +2,44 @@
 
 [JAPESDA](https://japesda.com/) Dashboard Clone
 
-# TODO
+# CRUD
 
-- [ ] Proker (On Progress)
+- [ ] Proker
+  - [x] Create
+  - [ ] Read
+  - [ ] Update
+  - [ ] Delete
+- [ ] Event
+  - [ ] Create
+  - [ ] Upload
+  - [ ] Read
+  - [ ] Update
+  - [ ] Delete
+- [ ] Galeri
+  - [ ] Create
+  - [ ] Upload
+  - [ ] Read
+  - [ ] Update
+  - [ ] Delete
+- [ ] Berita
+  - [ ] Create
+  - [ ] Upload
+  - [ ] Read
+  - [ ] Update
+  - [ ] Delete
+- [ ] Akun
+  - [ ] Create
+  - [ ] Read
+  - [ ] Update
+  - [ ] Delete
+
+# AUTH
+
 - [ ] Login
+- [ ] Logout
+- [ ] Authorization
+
+# Finishing
+
+- [ ] App name
+- [ ] Breadcrumb

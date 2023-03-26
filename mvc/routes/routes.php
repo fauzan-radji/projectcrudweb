@@ -5,6 +5,7 @@ define('ROUTES', [
   '/dashboard' => [DashboardController::class, 'index'],
   '/proker' => [ProkerController::class, 'index'],
   '/proker/create' => [ProkerController::class, 'create'],
+  '/proker/store' => [ProkerController::class, 'store'],
 ]);
 
 define('DEFAULT_CONTROLLER', _404Controller::class);
