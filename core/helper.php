@@ -4,7 +4,7 @@ namespace Core;
 
 define('ROOT', $_SERVER['DOCUMENT_ROOT'] . '/projectcrudweb/');
 
-function env($key)
+function env($key, $default = '')
 {
   $content = file_get_contents(ROOT . '.env');
   $content = preg_split('/\r\n/', $content);
@@ -13,7 +13,7 @@ function env($key)
     if ($k === $key) return $v;
   }
 
-  return '';
+  return $default;
 }
 
 function asset($asset)

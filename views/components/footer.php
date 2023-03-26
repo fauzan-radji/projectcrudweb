@@ -1,13 +1,13 @@
 <footer>
   <div class="footer clearfix mb-0 text-muted">
     <div class="float-start">
-      <p>2021 &copy; Mazer</p>
+      <p>2021 &copy;</p>
     </div>
     <div class="float-end">
       <p>
-        Crafted with
+        Made with
         <span class="text-danger"><i class="bi bi-heart"></i></span> by
-        <a href="https://saugi.me">Saugi</a>
+        <a href="https://instagram.com/ksl.ung">KSL UNG</a>
       </p>
     </div>
   </div>
