@@ -1,10 +1,12 @@
 <?php
 
+use Core\Auth;
+
 use function Core\extend;
 
 function title()
 {
-  echo 'Akun';
+  echo 'Akun | ' . Auth::auth()['nama'];
 }
 
 function main()

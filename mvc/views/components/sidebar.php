@@ -90,12 +90,14 @@ use function Core\routeIs;
             <span>Akun</span>
           </a>
           <ul class="submenu <?= routeIs('/akun') ? 'active' : '' ?>">
-            <li class="submenu-item <?= routeIs('/akun') ? 'active' : '' ?>">
-              <a href="<?= route('/akun') ?>">Akun</a>
-            </li>
+            <?php if (Auth::auth()) : ?>
+              <li class="submenu-item <?= routeIs('/akun') ? 'active' : '' ?>">
+                <a href="<?= route('/akun') ?>">Akun</a>
+              </li>
+            <?php endif; ?>
             <li class="submenu-item">
               <?php if (Auth::auth()) : ?>
-                <a href="<?= route('/logout') ?>">Logout</a>
+                <a href="<?= route('/logout') ?>" onclick="sweetconfirm(event, {title: 'Logout', text: 'Apakah Anda yakin?'}); return false;">Logout</a>
               <?php else : ?>
                 <a href="<?= route('/login') ?>">Login</a>
               <?php endif; ?>

@@ -14,6 +14,7 @@ define('ROUTES', [
   '/' => [HomeController::class, 'index'],
   '/akun' => [AuthController::class, 'index'],
   '/login' => [AuthController::class, 'login'],
+  '/logout' => [AuthController::class, 'logout'],
   '/authenticate' => [AuthController::class, 'authenticate'],
   '/dashboard' => [DashboardController::class, 'index'],
   '/petaweb' => [PetawebController::class, 'index'],

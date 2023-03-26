@@ -37,4 +37,11 @@ class AuthController extends Controller
     set_success($result['msg']);
     return redirect('/');
   }
+
+  public static function logout()
+  {
+    Auth::logout();
+    set_success('Berhasil logout');
+    return redirect('/login');
+  }
 }

@@ -30,12 +30,11 @@
 - [ ] Akun
   - [ ] Read
   - [ ] Update
-  - [ ] Delete
 
 # AUTH
 
 - [x] Login
-- [ ] Logout
+- [x] Logout
 - [ ] Authorization
 
 # Finishing
@@ -43,3 +42,4 @@
 - [ ] App name
 - [ ] Breadcrumb
 - [ ] Live image preview on Create and Update form
+- [ ] Refactoring

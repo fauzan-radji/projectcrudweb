@@ -86,7 +86,26 @@ use function Core\section;
     endif;
     ?>
   </script>
-
+  <script>
+    function sweetconfirm(e, {
+      title,
+      text
+    }) {
+      Swal.fire({
+        title,
+        text,
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Yakin!'
+      }).then((result) => {
+        if (result.isConfirmed) {
+          location.href = e.target.href;
+        }
+      })
+    }
+  </script>
   <?php section('script') ?>
 </body>
 

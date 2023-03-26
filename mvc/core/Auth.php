@@ -29,6 +29,11 @@ class Auth
     ];
   }
 
+  public static function logout()
+  {
+    Session::unset();
+  }
+
   public static function auth()
   {
     if (!Session::has('username')) return null;
