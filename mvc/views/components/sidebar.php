@@ -49,28 +49,28 @@ use function Core\routeIs;
           </a>
         </li>
 
-        <li class="sidebar-item <?= routeIs('/proker') ? 'active' : '' ?>">
+        <li class="sidebar-item <?= routeIs('/proker*') ? 'active' : '' ?>">
           <a href="<?= route('/proker') ?>" class="sidebar-link">
             <i class="bi bi-list-check"></i>
             <span>Program Kerja</span>
           </a>
         </li>
 
-        <li class="sidebar-item <?= routeIs('/event') ? 'active' : '' ?>">
+        <li class="sidebar-item <?= routeIs('/event*') ? 'active' : '' ?>">
           <a href="<?= route('/event') ?>" class="sidebar-link">
             <i class="bi bi-calendar-event"></i>
             <span>Event</span>
           </a>
         </li>
 
-        <li class="sidebar-item <?= routeIs('/galeri') ? 'active' : '' ?>">
+        <li class="sidebar-item <?= routeIs('/galeri*') ? 'active' : '' ?>">
           <a href="<?= route('/galeri') ?>" class="sidebar-link">
             <i class="bi bi-image-fill"></i>
             <span>Galeri</span>
           </a>
         </li>
 
-        <li class="sidebar-item <?= routeIs('/berita') ? 'active' : '' ?>">
+        <li class="sidebar-item <?= routeIs('/berita*') ? 'active' : '' ?>">
           <a href="<?= route('/berita') ?>" class="sidebar-link">
             <i class="bi bi-newspaper"></i>
             <span>Berita</span>
@@ -84,20 +84,23 @@ use function Core\routeIs;
           </a>
         </li>
 
-        <li class="sidebar-item <?= routeIs('/user') ? 'active' : '' ?> has-sub">
+        <li class="sidebar-item <?= routeIs('/user*') ? 'active' : '' ?> has-sub">
           <a href="#" class="sidebar-link">
             <i class="bi bi-person-badge-fill"></i>
             <span>Akun</span>
           </a>
-          <ul class="submenu <?= routeIs('/user') ? 'active' : '' ?>">
+          <ul class="submenu <?= routeIs('/user*') ? 'active' : '' ?>">
             <?php if (Auth::auth()) : ?>
               <li class="submenu-item <?= routeIs('/user') ? 'active' : '' ?>">
                 <a href="<?= route('/user') ?>">Akun Saya</a>
               </li>
+              <li class="submenu-item <?= routeIs('/user/edit*') ? 'active' : '' ?>">
+                <a href="<?= route('/user/edit') ?>">Edit Akun</a>
+              </li>
             <?php endif; ?>
             <li class="submenu-item">
               <?php if (Auth::auth()) : ?>
-                <a href="<?= route('/logout') ?>" onclick="sweetconfirm(event, {title: 'Logout', text: 'Apakah Anda yakin?'}); return false;">Logout</a>
+                <a href="<?= route('/logout') ?>" onclick="sweetconfirm(event, {title: 'Logout', text: 'Apakah Anda yakin?'}); return false;" class="text-danger">Logout</a>
               <?php else : ?>
                 <a href="<?= route('/login') ?>">Login</a>
               <?php endif; ?>

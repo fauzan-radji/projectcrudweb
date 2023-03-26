@@ -90,7 +90,10 @@ function set_success($success)
 function routeIs($guess)
 {
   global $path;
-  return $guess === $path;
+  $guess = str_replace('/', '\\/', $guess);
+  $pattern = '/^' . str_replace('*', '.*', $guess) . '$/';
+
+  return preg_match($pattern, $path);
 }
 
 function truncate($string, $length = 30, $append = "&hellip;")

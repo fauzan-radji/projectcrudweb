@@ -23,11 +23,14 @@ function form()
     </div>
 
     <div class="container-login100-form-btn m-t-32">
-      <button type="submit" class="login100-form-btn">
-        Login
-      </button>
+      <button type="submit" class="login100-form-btn">Login</button>
+    </div>
+
+    <div class="text-center mt-4">
+      <a href="<?= route('/') ?>" style="font-size: 1rem; color: #d41872; text-decoration: underline;">Dashboard</a>
     </div>
   </form>
+
 <?php
 }
 

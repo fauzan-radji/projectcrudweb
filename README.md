@@ -43,6 +43,6 @@
 - [ ] App name
 - [x] Dashboard
 - [ ] Breadcrumb
-- [ ] Sidebar active menu
+- [x] Sidebar active menu
 - [ ] Live image preview on Create and Update form
 - [ ] Refactoring
