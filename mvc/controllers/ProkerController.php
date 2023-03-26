@@ -26,6 +26,8 @@ class ProkerController extends Controller
    */
   public static function create()
   {
+    static::authorize('superadmin');
+
     return view('proker/create');
   }
 
@@ -34,6 +36,8 @@ class ProkerController extends Controller
    */
   public static function store()
   {
+    static::authorize('superadmin');
+
     $namakeg  = htmlspecialchars($_POST['namakeg']);
     $tujuankeg  = htmlspecialchars($_POST['tujuankeg']);
     $sasarankeg = htmlspecialchars($_POST['sasarankeg']);
@@ -66,6 +70,8 @@ class ProkerController extends Controller
    */
   public static function edit($id)
   {
+    static::authorize('superadmin');
+
     $proker = Proker::find($id, 'id_proker');
 
     return view('proker/edit', ['proker' => $proker]);
@@ -76,6 +82,8 @@ class ProkerController extends Controller
    */
   public static function update($id)
   {
+    static::authorize('superadmin');
+
     $namakeg  = htmlspecialchars($_POST['namakeg']);
     $tujuankeg  = htmlspecialchars($_POST['tujuankeg']);
     $sasarankeg = htmlspecialchars($_POST['sasarankeg']);
@@ -100,6 +108,8 @@ class ProkerController extends Controller
 
   public static function destroy($id)
   {
+    static::authorize('superadmin');
+
     $proker = Proker::find($id, 'id_proker');
     $result = Proker::delete($id, 'id_proker');
 

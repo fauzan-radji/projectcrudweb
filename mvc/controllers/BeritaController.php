@@ -27,6 +27,8 @@ class BeritaController extends Controller
    */
   public static function create()
   {
+    static::authorize('superadmin');
+
     return view('berita/create');
   }
 
@@ -35,6 +37,8 @@ class BeritaController extends Controller
    */
   public static function store()
   {
+    static::authorize('superadmin');
+
     $judul  = htmlspecialchars($_POST['judul']);
     $gambar = '';
     $isiberita = htmlspecialchars($_POST['isiberita']);
@@ -73,6 +77,8 @@ class BeritaController extends Controller
    */
   public static function edit($id)
   {
+    static::authorize('superadmin');
+
     $berita = Berita::find($id, 'id_berita');
 
     return view('berita/edit', ['berita' => $berita]);
@@ -83,6 +89,8 @@ class BeritaController extends Controller
    */
   public static function update($id)
   {
+    static::authorize('superadmin');
+
     $judul  = htmlspecialchars($_POST['judul']);
     $isiberita = htmlspecialchars($_POST['isiberita']);
     $tanggal  = htmlspecialchars($_POST['tanggal']);
@@ -114,6 +122,8 @@ class BeritaController extends Controller
 
   public static function destroy($id)
   {
+    static::authorize('superadmin');
+
     $berita = Berita::find($id, 'id_berita');
     $result = Berita::delete($id, 'id_berita');
     Storage::delete($berita['gambar']);

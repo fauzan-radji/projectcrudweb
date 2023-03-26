@@ -44,4 +44,9 @@ class Auth
 
     return $user;
   }
+
+  public static function is($level)
+  {
+    return static::auth() && static::auth()['level'] === $level;
+  }
 }

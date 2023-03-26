@@ -12,7 +12,9 @@ function main()
 {
 ?>
   <div class="card">
-    <div class="card-header"></div> <!-- FIXME: div ini tidak dihapus untuk kepentingan layout -->
+    <div class="card-header">
+      <a href="<?= route('/proker') ?>" class="btn btn-outline-primary d-inline-flex align-items-center gap-2"><i class="bi bi-arrow-left d-flex align-items-center"></i> Ke daftar proker</a>
+    </div>
     <div class="card-content">
       <div class="card-body">
         <form class="form form-horizontal" action="<?= route('/proker/store') ?>" method="post">

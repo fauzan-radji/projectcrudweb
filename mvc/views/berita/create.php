@@ -52,7 +52,7 @@ function main()
 
               <div class="mb-3">
                 <label for="isiberita">Isi</label>
-                <input type="text" class="form-control" name="isiberita" id="isiberita" placeholder="Masukkan Isi Berita" required />
+                <textarea class="form-control" name="isiberita" id="isiberita" placeholder="Masukkan Isi Berita" required></textarea>
               </div>
 
               <div class="mb-3">

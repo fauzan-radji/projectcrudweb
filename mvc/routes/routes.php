@@ -1,5 +1,6 @@
 <?php
 
+use Controllers\_403Controller;
 use Controllers\_404Controller;
 use Controllers\AuthController;
 use Controllers\BeritaController;
@@ -11,6 +12,8 @@ use Controllers\PetawebController;
 use Controllers\ProkerController;
 
 define('ROUTES', [
+  '/error/403' => [_403Controller::class, 'index'],
+
   '/' => [HomeController::class, 'index'],
   '/akun' => [AuthController::class, 'index'],
   '/login' => [AuthController::class, 'login'],

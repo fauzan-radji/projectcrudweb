@@ -27,6 +27,8 @@ class EventController extends Controller
    */
   public static function create()
   {
+    static::authorize('superadmin');
+
     return view('event/create');
   }
 
@@ -35,6 +37,8 @@ class EventController extends Controller
    */
   public static function store()
   {
+    static::authorize('superadmin');
+
     $judul  = htmlspecialchars($_POST['judul']);
     $gambar = '';
     // $gambar  = htmlspecialchars($_POST['gambar']);
@@ -75,6 +79,8 @@ class EventController extends Controller
    */
   public static function edit($id)
   {
+    static::authorize('superadmin');
+
     $event = Event::find($id, 'id_event');
 
     return view('event/edit', ['event' => $event]);
@@ -85,6 +91,8 @@ class EventController extends Controller
    */
   public static function update($id)
   {
+    static::authorize('superadmin');
+
     $judul  = htmlspecialchars($_POST['judul']);
     $isievent = htmlspecialchars($_POST['isievent']);
     $status  = htmlspecialchars($_POST['status']);
@@ -118,6 +126,8 @@ class EventController extends Controller
 
   public static function destroy($id)
   {
+    static::authorize('superadmin');
+
     $event = Event::find($id, 'id_event');
     $result = Event::delete($id, 'id_event');
     Storage::delete($event['gambar']);

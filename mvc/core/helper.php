@@ -93,7 +93,7 @@ function routeIs($guess)
   return $guess === $path;
 }
 
-function truncate($string, $length = 100, $append = "&hellip;")
+function truncate($string, $length = 30, $append = "&hellip;")
 {
   $string = trim($string);
 

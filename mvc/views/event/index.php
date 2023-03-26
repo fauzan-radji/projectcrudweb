@@ -1,5 +1,7 @@
 <?php
 
+use Core\Auth;
+
 use function Core\asset;
 use function Core\extend;
 use function Core\route;
@@ -27,10 +29,12 @@ function main()
     <div class="card">
       <div class="card-header d-flex justify-content-between">
         <span>Event</span>
-        <a class="btn btn-sm btn-primary icon icon-left d-flex align-items-center gap-2" href="<?= route('/event/create') ?>">
-          <i class="bi bi-plus-square d-flex align-items-center"></i>
-          <span>Tambah Event</span>
-        </a>
+        <?php if (Auth::is('superadmin')) : ?>
+          <a class="btn btn-sm btn-primary icon icon-left d-flex align-items-center gap-2" href="<?= route('/event/create') ?>">
+            <i class="bi bi-plus-square d-flex align-items-center"></i>
+            <span>Tambah Event</span>
+          </a>
+        <?php endif; ?>
       </div>
       <div class="card-body">
         <table class="table" id="table">
@@ -51,13 +55,17 @@ function main()
                 <td><?= $event['judul'] ?></td>
                 <td><img src="<?= uploads($event['gambar']) ?>" alt="<?= $event['judul'] ?>" style="width: 200px; aspect-ratio: 16/9; object-fit: cover;"></td>
                 <td><?= date('d-m-Y', strtotime($event['tanggal'])) ?></td>
+
                 <td>
                   <!-- detail -->
                   <a href="<?= route("/event/{$event['id_event']}") ?>" class="badge text-bg-info rounded-3"><i class="bi bi-info-circle"></i></a>
-                  <!-- edit -->
-                  <a href="<?= route("/event/{$event['id_event']}/edit") ?>" class="badge text-bg-warning rounded-3"><i class="bi bi-pencil"></i></a>
-                  <!-- delete -->
-                  <a href="<?= route("/event/{$event['id_event']}/destroy") ?>" onclick="sweetconfirm(event, {title: 'Apakah Anda yakin?', text: 'Tindakan ini tidak dapat diubah'}); return false;" class="badge text-bg-danger rounded-3"><i class="bi bi-trash pe-none"></i></a>
+
+                  <?php if (Auth::is('superadmin')) : ?>
+                    <!-- edit -->
+                    <a href="<?= route("/event/{$event['id_event']}/edit") ?>" class="badge text-bg-warning rounded-3"><i class="bi bi-pencil"></i></a>
+                    <!-- delete -->
+                    <a href="<?= route("/event/{$event['id_event']}/destroy") ?>" onclick="sweetconfirm(event, {title: 'Apakah Anda yakin?', text: 'Tindakan ini tidak dapat diubah'}); return false;" class="badge text-bg-danger rounded-3"><i class="bi bi-trash pe-none"></i></a>
+                  <?php endif; ?>
                 </td>
               </tr>
             <?php endforeach; ?>

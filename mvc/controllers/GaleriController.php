@@ -27,6 +27,8 @@ class GaleriController extends Controller
    */
   public static function create()
   {
+    static::authorize('superadmin');
+
     return view('galeri/create');
   }
 
@@ -35,6 +37,8 @@ class GaleriController extends Controller
    */
   public static function store()
   {
+    static::authorize('superadmin');
+
     $judul  = htmlspecialchars($_POST['judul']);
     $gambar = '';
     $sumber = htmlspecialchars($_POST['sumber']);
@@ -73,6 +77,8 @@ class GaleriController extends Controller
    */
   public static function edit($id)
   {
+    static::authorize('superadmin');
+
     $galeri = Galeri::find($id, 'id_galeri');
 
     return view('galeri/edit', ['galeri' => $galeri]);
@@ -83,6 +89,8 @@ class GaleriController extends Controller
    */
   public static function update($id)
   {
+    static::authorize('superadmin');
+
     $judul  = htmlspecialchars($_POST['judul']);
     $sumber = htmlspecialchars($_POST['sumber']);
     $tempat  = htmlspecialchars($_POST['tempat']);
@@ -114,6 +122,8 @@ class GaleriController extends Controller
 
   public static function destroy($id)
   {
+    static::authorize('superadmin');
+
     $galeri = Galeri::find($id, 'id_galeri');
     $result = Galeri::delete($id, 'id_galeri');
     Storage::delete($galeri['gambar']);

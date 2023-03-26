@@ -35,11 +35,13 @@
 
 - [x] Login
 - [x] Logout
-- [ ] Authorization
+- [x] Authorization
 
 # Finishing
 
 - [ ] App name
+- [ ] Dashboard
 - [ ] Breadcrumb
+- [ ] Sidebar active menu
 - [ ] Live image preview on Create and Update form
 - [ ] Refactoring
