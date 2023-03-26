@@ -2,6 +2,7 @@
 
 use Controllers\_404Controller;
 use Controllers\AuthController;
+use Controllers\BeritaController;
 use Controllers\DashboardController;
 use Controllers\EventController;
 use Controllers\GaleriController;
@@ -36,6 +37,14 @@ define('ROUTES', [
   '/galeri/{id}/edit' => [GaleriController::class, 'edit'],
   '/galeri/{id}/update' => [GaleriController::class, 'update'],
   '/galeri/{id}/destroy' => [GaleriController::class, 'destroy'],
+
+  '/berita' => [BeritaController::class, 'index'],
+  '/berita/create' => [BeritaController::class, 'create'],
+  '/berita/store' => [BeritaController::class, 'store'],
+  '/berita/{id}' => [BeritaController::class, 'show'],
+  '/berita/{id}/edit' => [BeritaController::class, 'edit'],
+  '/berita/{id}/update' => [BeritaController::class, 'update'],
+  '/berita/{id}/destroy' => [BeritaController::class, 'destroy'],
 ]);
 
 define('DEFAULT_CONTROLLER', _404Controller::class);

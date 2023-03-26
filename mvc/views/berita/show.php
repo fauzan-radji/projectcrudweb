@@ -6,18 +6,18 @@ use function Core\uploads;
 
 function title()
 {
-  echo 'Detail Galeri';
+  echo 'Detail Berita';
 }
 
 function main()
 {
-  global $galeri;
+  global $berita;
 ?>
   <div class="row">
     <div class="col-md-4">
       <div class="card">
         <div class="card-body">
-          <img class="img-fluid" src="<?= uploads($galeri['gambar']) ?>" alt="<?= $galeri['judul'] ?>">
+          <img class="img-fluid" src="<?= uploads($berita['gambar']) ?>" alt="<?= $berita['judul'] ?>">
         </div>
       </div>
     </div>
@@ -25,22 +25,22 @@ function main()
       <div class="card">
         <div class="card-content">
           <div class="card-body">
-            <a href="<?= route('/galeri') ?>" class="btn btn-outline-primary d-inline-flex align-items-center gap-2"><i class="bi bi-arrow-left d-flex align-items-center"></i> Ke daftar galeri</a>
+            <a href="<?= route('/berita') ?>" class="btn btn-outline-primary d-inline-flex align-items-center gap-2"><i class="bi bi-arrow-left d-flex align-items-center"></i> Ke daftar berita</a>
             <table class="table mt-3">
               <tr>
                 <th>Judul</th>
                 <th>:</th>
-                <td><?= $galeri['judul'] ?></td>
+                <td><?= $berita['judul'] ?></td>
               </tr>
               <tr>
-                <th>Sumber</th>
+                <th>Isi Berita</th>
                 <th>:</th>
-                <td><?= $galeri['sumber'] ?></td>
+                <td><?= $berita['isiberita'] ?></td>
               </tr>
               <tr>
-                <th>Tempat</th>
+                <th>Tanggal</th>
                 <th>:</th>
-                <td><?= $galeri['tempat'] ?></td>
+                <td><?= date('j F Y', strtotime($berita['tanggal'])) ?></td>
               </tr>
             </table>
           </div>

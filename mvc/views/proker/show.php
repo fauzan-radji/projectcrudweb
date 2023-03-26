@@ -21,32 +21,32 @@ function main()
             <table class="table mt-3">
               <tr>
                 <th>Nama Program</th>
-                <td>:</td>
+                <th>:</th>
                 <td><?= $proker['namakeg'] ?></td>
               </tr>
               <tr>
                 <th>Tujuan Program</th>
-                <td>:</td>
+                <th>:</th>
                 <td><?= $proker['tujuankeg'] ?></td>
               </tr>
               <tr>
                 <th>Sasaran Program</th>
-                <td>:</td>
+                <th>:</th>
                 <td><?= $proker['sasarankeg'] ?></td>
               </tr>
               <tr>
                 <th>Sumber Dana</th>
-                <td>:</td>
+                <th>:</th>
                 <td><?= $proker['danakeg'] ?></td>
               </tr>
               <tr>
                 <th>Waktu</th>
-                <td>:</td>
+                <th>:</th>
                 <td><?= date('j F Y', strtotime($proker['waktukeg'])) ?></td>
               </tr>
               <tr>
                 <th>Tempat</th>
-                <td>:</td>
+                <th>:</th>
                 <td><?= $proker['tempatkeg'] ?></td>
               </tr>
             </table>

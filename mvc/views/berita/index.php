@@ -3,10 +3,12 @@
 use function Core\asset;
 use function Core\extend;
 use function Core\route;
+use function Core\truncate;
+use function Core\uploads;
 
 function title()
 {
-  echo 'Program Kerja';
+  echo 'Berita';
 }
 
 function style()
@@ -20,15 +22,15 @@ function style()
 
 function main()
 {
-  global $prokers;
+  global $beritas;
 ?>
   <section class="section">
     <div class="card">
       <div class="card-header d-flex justify-content-between">
-        <span>Program Kerja</span>
-        <a class="btn btn-sm btn-primary icon icon-left d-flex align-items-center gap-2" href="<?= route('/proker/create') ?>">
+        <span>Berita</span>
+        <a class="btn btn-sm btn-primary icon icon-left d-flex align-items-center gap-2" href="<?= route('/berita/create') ?>">
           <i class="bi bi-plus-square d-flex align-items-center"></i>
-          <span>Tambah Proker</span>
+          <span>Tambah Berita</span>
         </a>
       </div>
       <div class="card-body">
@@ -36,27 +38,29 @@ function main()
           <thead>
             <tr>
               <th>#</th>
-              <th>Nama Program</th>
-              <th>Waktu</th>
-              <th>Tempat</th>
+              <th>Judul</th>
+              <th>Cover</th>
+              <th>Isi Berita</th>
+              <th>Tanggal</th>
               <th>Aksi</th>
             </tr>
           </thead>
           <tbody>
             <?php $no = 1;
-            foreach ($prokers as $proker) : ?>
+            foreach ($beritas as $berita) : ?>
               <tr>
                 <td><?= $no++ ?></td>
-                <td><?= $proker['namakeg'] ?></td>
-                <td><?= date('d-m-Y', strtotime($proker['waktukeg'])) ?></td>
-                <td><?= $proker['tempatkeg'] ?></td>
+                <td><?= $berita['judul'] ?></td>
+                <td><img src="<?= uploads($berita['gambar']) ?>" alt="<?= $berita['judul'] ?>" style="width: 200px; aspect-ratio: 16/9; object-fit: cover;"></td>
+                <td><?= truncate($berita['isiberita']) ?></td>
+                <td><?= date('d-m-Y', strtotime($berita['tanggal'])) ?></td>
                 <td>
                   <!-- detail -->
-                  <a href="<?= route("/proker/{$proker['id_proker']}") ?>" class="badge text-bg-info rounded-3"><i class="bi bi-info-circle"></i></a>
+                  <a href="<?= route("/berita/{$berita['id_berita']}") ?>" class="badge text-bg-info rounded-3"><i class="bi bi-info-circle"></i></a>
                   <!-- edit -->
-                  <a href="<?= route("/proker/{$proker['id_proker']}/edit") ?>" class="badge text-bg-warning rounded-3"><i class="bi bi-pencil"></i></a>
+                  <a href="<?= route("/berita/{$berita['id_berita']}/edit") ?>" class="badge text-bg-warning rounded-3"><i class="bi bi-pencil"></i></a>
                   <!-- delete -->
-                  <a href="<?= route("/proker/{$proker['id_proker']}/destroy") ?>" onclick="sweetconfirm(event); return false;" class="badge text-bg-danger rounded-3"><i class="bi bi-trash pe-none"></i></a>
+                  <a href="<?= route("/berita/{$berita['id_berita']}/destroy") ?>" onclick="sweetconfirm(berita); return false;" class="badge text-bg-danger rounded-3"><i class="bi bi-trash pe-none"></i></a>
                 </td>
               </tr>
             <?php endforeach; ?>

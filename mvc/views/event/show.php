@@ -29,22 +29,22 @@ function main()
             <table class="table mt-3">
               <tr>
                 <th>Nama Event</th>
-                <td>:</td>
+                <th>:</th>
                 <td><?= $event['judul'] ?></td>
               </tr>
               <tr>
                 <th>Isi Event</th>
-                <td>:</td>
+                <th>:</th>
                 <td><?= $event['isievent'] ?></td>
               </tr>
               <tr>
                 <th>Status</th>
-                <td>:</td>
+                <th>:</th>
                 <td><?= $event['status'] ?></td>
               </tr>
               <tr>
                 <th>Tanggal</th>
-                <td>:</td>
+                <th>:</th>
                 <td><?= date('j F Y', strtotime($event['tanggal'])) ?></td>
               </tr>
             </table>

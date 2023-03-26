@@ -7,9 +7,7 @@ use function Core\uploads;
 
 function title()
 {
-?>
-  Event
-<?php
+  echo 'Event';
 }
 
 function style()
@@ -35,7 +33,7 @@ function main()
         </a>
       </div>
       <div class="card-body">
-        <table class="table" id="table-event">
+        <table class="table" id="table">
           <thead>
             <tr>
               <th>#</th>
@@ -76,7 +74,7 @@ function script()
 ?>
   <script src="<?= asset('extensions/jquery/jquery.min.js') ?>"></script>
   <script src="https://cdn.datatables.net/v/bs5/dt-1.12.1/datatables.min.js"></script>
-  <script src="<?= asset('js/tables/event.js') ?>"></script>
+  <script src="<?= asset('js/table.js') ?>"></script>
   <script>
     function sweetconfirm(e) {
       Swal.fire({
