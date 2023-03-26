@@ -44,8 +44,10 @@ function view($view, $data = [])
   require ROOT . "views/$view.php";
 }
 
-function extend($layout)
+function extend($layout, $data = [])
 {
+  foreach ($data as $key => $value) ${$key} = $value;
+
   require_once ROOT . "views/layouts/$layout.php";
 }
 
@@ -54,8 +56,11 @@ function section($section, $data = [])
   if (function_exists($section)) $section($data);
 }
 
-function component($component)
+function component($component, $data = [])
 {
+  foreach ($data as $key => $value)
+    ${$key} = $value;
+
   require ROOT . "views/components/$component.php";
 }
 

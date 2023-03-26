@@ -45,7 +45,9 @@ use function Core\section;
               <h3><?php section('title') ?></h3>
             </div>
             <div class="col-12 col-md-6 order-md-2 order-first">
-              <?php component('breadcrumb') ?>
+              <?php component('breadcrumb', [
+                'items' => $breadcrumb
+              ]) ?>
             </div>
           </div>
         </div>

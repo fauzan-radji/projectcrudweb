@@ -86,4 +86,8 @@ function script()
 <?php
 }
 
-extend('dashboard');
+extend('dashboard', [
+  'breadcrumb' => [
+    'Program Kerja' => true,
+  ]
+]);

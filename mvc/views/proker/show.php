@@ -58,4 +58,10 @@ function main()
 <?php
 }
 
-extend('dashboard');
+
+extend('dashboard', [
+  'breadcrumb' => [
+    '<a href="' . route('/proker') . '">Program Kerja</a>' => false,
+    'Detail Proker' => true,
+  ]
+]);

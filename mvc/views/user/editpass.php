@@ -67,4 +67,10 @@ function script()
 <?php
 }
 
-extend('dashboard');
+extend('dashboard', [
+  'breadcrumb' => [
+    '<a href="' . route('/user') . '">Akun</a>' => false,
+    '<a href="' . route('/user') . '">Akun Saya</a>' => false,
+    'Edit Password' => true,
+  ]
+]);

@@ -31,4 +31,8 @@ function script()
 <?php
 }
 
-extend('dashboard');
+extend('dashboard', [
+  'breadcrumb' => [
+    'Peta' => true,
+  ]
+]);

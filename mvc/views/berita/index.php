@@ -89,4 +89,8 @@ function script()
 <?php
 }
 
-extend('dashboard');
+extend('dashboard', [
+  'breadcrumb' => [
+    'Berita' => true,
+  ]
+]);

@@ -67,4 +67,9 @@ function script()
 <?php
 }
 
-extend('dashboard');
+extend('dashboard', [
+  'breadcrumb' => [
+    '<a href="' . route('/user') . '">Akun</a>' => false,
+    'Akun Saya' => true,
+  ]
+]);

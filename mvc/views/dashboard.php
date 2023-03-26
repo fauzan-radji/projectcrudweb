@@ -293,4 +293,8 @@ function script()
 <?php
 }
 
-extend('dashboard');
+extend('dashboard', [
+  'breadcrumb' => [
+    'Dashboard' => false,
+  ]
+]);

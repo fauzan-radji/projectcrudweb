@@ -84,4 +84,9 @@ function main()
 <?php
 }
 
-extend('dashboard');
+extend('dashboard', [
+  'breadcrumb' => [
+    '<a href="' . route('/event') . '">Event</a>' => false,
+    'Edit Event' => true,
+  ]
+]);

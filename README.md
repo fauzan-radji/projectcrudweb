@@ -42,7 +42,9 @@
 
 - [ ] App name
 - [x] Dashboard
-- [ ] Breadcrumb
+- [x] Breadcrumb
 - [x] Sidebar active menu
 - [ ] Live image preview on Create and Update form
+- [ ] Gambar di halaman login
+- [ ] Favicon
 - [ ] Refactoring

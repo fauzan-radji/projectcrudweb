@@ -77,4 +77,9 @@ function main()
 <?php
 }
 
-extend('dashboard');
+extend('dashboard', [
+  'breadcrumb' => [
+    '<a href="' . route('/galeri') . '">Galeri</a>' => false,
+    'Tambah Galeri' => true,
+  ]
+]);

@@ -91,11 +91,8 @@ use function Core\routeIs;
           </a>
           <ul class="submenu <?= routeIs('/user*') ? 'active' : '' ?>">
             <?php if (Auth::auth()) : ?>
-              <li class="submenu-item <?= routeIs('/user') ? 'active' : '' ?>">
+              <li class="submenu-item <?= routeIs('/user*') ? 'active' : '' ?>">
                 <a href="<?= route('/user') ?>">Akun Saya</a>
-              </li>
-              <li class="submenu-item <?= routeIs('/user/edit*') ? 'active' : '' ?>">
-                <a href="<?= route('/user/edit') ?>">Edit Akun</a>
               </li>
             <?php endif; ?>
             <li class="submenu-item">
