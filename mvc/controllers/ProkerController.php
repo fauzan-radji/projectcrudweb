@@ -62,7 +62,7 @@ class ProkerController extends Controller
   }
 
   /**
-   * Menampilkan view form edit
+   * Menampilkan view form edit untuk data spesifik
    */
   public static function edit($id)
   {
@@ -72,11 +72,10 @@ class ProkerController extends Controller
   }
 
   /**
-   * Mengupdate data tertentu ke database
+   * Mengupdate data spesifik ke database
    */
   public static function update($id)
   {
-    $proker = Proker::find($id, 'id_proker');
     $namakeg  = htmlspecialchars($_POST['namakeg']);
     $tujuankeg  = htmlspecialchars($_POST['tujuankeg']);
     $sasarankeg = htmlspecialchars($_POST['sasarankeg']);
@@ -95,6 +94,17 @@ class ProkerController extends Controller
 
     if ($result) set_success("Berhasil mengupdate data proker $namakeg");
     else set_error("Berhasil mengupdate data proker $namakeg");
+
+    return redirect('/proker');
+  }
+
+  public static function destroy($id)
+  {
+    $proker = Proker::find($id, 'id_proker');
+    $result = Proker::delete($id, 'id_proker');
+
+    if ($result) set_success("Berhasil menghapus data proker {$proker['namakeg']}");
+    else set_error("Berhasil menghapus data proker {$proker['namakeg']}");
 
     return redirect('/proker');
   }

@@ -2,6 +2,8 @@
 
 use function Core\asset;
 use function Core\route;
+use function Core\routeIs;
+
 ?>
 <div id="sidebar" class="active">
   <div class="sidebar-wrapper active">
@@ -38,26 +40,21 @@ use function Core\route;
       <ul class="menu">
         <li class="sidebar-title">Menu</li>
 
-        <li class="sidebar-item active">
+        <li class="sidebar-item <?= routeIs('/') ? 'active' : '' ?>">
           <a href="<?= route('/') ?>" class="sidebar-link">
             <i class="bi bi-grid-fill"></i>
             <span>Dashboard</span>
           </a>
         </li>
 
-        <li class="sidebar-item has-sub">
-          <a href="#" class="sidebar-link">
+        <li class="sidebar-item <?= routeIs('/proker') ? 'active' : '' ?>">
+          <a href="<?= route('/proker') ?>" class="sidebar-link">
             <i class="bi bi-list-check"></i>
             <span>Program Kerja</span>
           </a>
-          <ul class="submenu">
-            <li class="submenu-item">
-              <a href="<?= route('/proker') ?>">Program Kerja</a>
-            </li>
-          </ul>
         </li>
 
-        <li class="sidebar-item has-sub">
+        <li class="sidebar-item <?= routeIs('/event') ? 'active' : '' ?> has-sub">
           <a href="#" class="sidebar-link">
             <i class="bi bi-calendar-event"></i>
             <span>Event</span>
@@ -69,7 +66,7 @@ use function Core\route;
           </ul>
         </li>
 
-        <li class="sidebar-item has-sub">
+        <li class="sidebar-item <?= routeIs('/galeri') ? 'active' : '' ?> has-sub">
           <a href="#" class="sidebar-link">
             <i class="bi bi-image-fill"></i>
             <span>Galeri</span>
@@ -81,7 +78,7 @@ use function Core\route;
           </ul>
         </li>
 
-        <li class="sidebar-item has-sub">
+        <li class="sidebar-item <?= routeIs('/berita') ? 'active' : '' ?> has-sub">
           <a href="#" class="sidebar-link">
             <i class="bi bi-newspaper"></i>
             <span>Berita</span>
@@ -93,7 +90,7 @@ use function Core\route;
           </ul>
         </li>
 
-        <li class="sidebar-item has-sub">
+        <li class="sidebar-item <?= routeIs('/petaweb') ? 'active' : '' ?> has-sub">
           <a href="#" class="sidebar-link">
             <i class="bi bi-map-fill"></i>
             <span>Peta</span>
@@ -105,7 +102,7 @@ use function Core\route;
           </ul>
         </li>
 
-        <li class="sidebar-item has-sub">
+        <li class="sidebar-item <?= routeIs('/akun') ? 'active' : '' ?> has-sub">
           <a href="#" class="sidebar-link">
             <i class="bi bi-person-badge-fill"></i>
             <span>Akun</span>

@@ -58,7 +58,7 @@ function main()
                   <!-- edit -->
                   <a href="<?= route("/proker/{$proker['id_proker']}/edit") ?>" class="badge text-bg-warning rounded-3"><i class="bi bi-pencil"></i></a>
                   <!-- delete -->
-                  <button class="badge text-bg-danger rounded-3 border-0"><i class="bi bi-trash"></i></button>
+                  <a href="<?= route("/proker/{$proker['id_proker']}/destroy") ?>" onclick="sweetconfirm(event); return false;" class="badge text-bg-danger rounded-3"><i class="bi bi-trash pe-none"></i></a>
                 </td>
               </tr>
             <?php endforeach; ?>
@@ -76,6 +76,23 @@ function script()
   <script src="<?= asset('extensions/jquery/jquery.min.js') ?>"></script>
   <script src="https://cdn.datatables.net/v/bs5/dt-1.12.1/datatables.min.js"></script>
   <script src="<?= asset('js/tables/proker.js') ?>"></script>
+  <script>
+    function sweetconfirm(e) {
+      Swal.fire({
+        title: 'Apakah Anda yakin?',
+        text: "Tindakan ini tidak dapat diubah",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Yakin!'
+      }).then((result) => {
+        if (result.isConfirmed) {
+          location.href = e.target.href;
+        }
+      })
+    }
+  </script>
 <?php
 }
 

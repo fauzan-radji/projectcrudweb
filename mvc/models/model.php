@@ -25,12 +25,17 @@ abstract class Model
     return Database::query("INSERT INTO " . static::$table . " VALUES (" . implode(',', $values) . ")");
   }
 
-  public static function update($id, $values, $where = 'id')
+  public static function update($id, $values, $column = 'id')
   {
     $columns = [];
     foreach ($values as $key => $value) $columns[] = "$key = $value";
-    $query = "UPDATE " . static::$table . " SET " . implode(', ', $columns) . " WHERE $where = $id";
+    $query = "UPDATE " . static::$table . " SET " . implode(', ', $columns) . " WHERE $column = $id";
 
     return Database::query($query);
+  }
+
+  public static function delete($id, $column = 'id')
+  {
+    return Database::query("DELETE FROM " . static::$table . " WHERE $column = $id");
   }
 }

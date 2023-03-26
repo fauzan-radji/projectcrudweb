@@ -81,3 +81,9 @@ function set_success($success)
 {
   $_SESSION['success'] = $success;
 }
+
+function routeIs($guess)
+{
+  global $path;
+  return $guess === $path;
+}

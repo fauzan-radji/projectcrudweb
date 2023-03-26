@@ -4,11 +4,11 @@
 
 # CRUD
 
-- [ ] Proker
+- [x] Proker
   - [x] Create
   - [x] Read
-  - [ ] Update
-  - [ ] Delete
+  - [x] Update
+  - [x] Delete
 - [ ] Event
   - [ ] Create
   - [ ] Upload
