@@ -38,8 +38,10 @@ function redirect($url)
 
 function view($view, $data = [])
 {
-  foreach ($data as $key => $value)
+  foreach ($data as $key => $value) {
     $GLOBALS[$key] = $value;
+    ${$key} = $value;
+  }
 
   require ROOT . "views/$view.php";
 }
@@ -112,4 +114,9 @@ function truncate($string, $length = 30, $append = "&hellip;")
   }
 
   return $string;
+}
+
+function formatTime($format, $time)
+{
+  return date($format, strtotime($time));
 }

@@ -27,7 +27,7 @@ function form()
     </div>
 
     <div class="text-center mt-4">
-      <a href="<?= route('/') ?>" style="font-size: 1rem; color: #d41872; text-decoration: underline;">Dashboard</a>
+      <a href="<?= route('/') ?>" style="font-size: 1rem; color: #d41872; text-decoration: underline;">Homepage</a>
     </div>
   </form>
 

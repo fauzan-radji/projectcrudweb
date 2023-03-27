@@ -1,6 +1,7 @@
 <?php
 
 use function Core\extend;
+use function Core\formatTime;
 use function Core\route;
 
 function title()
@@ -42,7 +43,7 @@ function main()
               <tr>
                 <th>Waktu</th>
                 <th>:</th>
-                <td><?= date('j F Y', strtotime($proker['waktukeg'])) ?></td>
+                <td><?= formatTime('j F Y', $proker['waktukeg']) ?></td>
               </tr>
               <tr>
                 <th>Tempat</th>

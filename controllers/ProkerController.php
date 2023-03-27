@@ -16,7 +16,7 @@ class ProkerController extends Controller
    */
   public static function index()
   {
-    $prokers = Proker::getAll();
+    $prokers = Proker::all();
 
     return view('proker/index', ['prokers' => $prokers]);
   }

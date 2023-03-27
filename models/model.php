@@ -8,7 +8,7 @@ abstract class Model
 {
   protected static $table;
 
-  public static function getAll()
+  public static function all()
   {
     $result = Database::query("SELECT * FROM " . static::$table);
     return Database::fetch($result);

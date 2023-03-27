@@ -4,6 +4,7 @@ namespace Controllers;
 
 use Models\Berita;
 use Models\Event;
+use Models\Galeri;
 use Models\Proker;
 use Models\User;
 
@@ -13,16 +14,16 @@ class HomeController extends Controller
 {
   public static function index()
   {
-    $proker = Proker::count();
-    $berita = Berita::count();
-    $event = Event::count();
-    $user = User::count();
+    $prokers = Proker::all();
+    $beritas = Berita::all();
+    $events = Event::all();
+    $galeris = Galeri::all();
 
     return view('home', [
-      'proker' => $proker,
-      'berita' => $berita,
-      'event' => $event,
-      'user' => $user
+      'prokers' => $prokers,
+      'beritas' => $beritas,
+      'events' => $events,
+      'galeris' => $galeris,
     ]);
   }
 }

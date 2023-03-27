@@ -17,7 +17,7 @@ class BeritaController extends Controller
    */
   public static function index()
   {
-    $beritas = Berita::getAll();
+    $beritas = Berita::all();
 
     return view('berita/index', ['beritas' => $beritas]);
   }
@@ -60,6 +60,16 @@ class BeritaController extends Controller
     else set_error("Gagal menambah data berita $judul");
 
     return redirect('/berita');
+  }
+
+  /**
+   * Menampilkan view data spesifik
+   */
+  public static function read($id)
+  {
+    $berita = Berita::find($id, 'id_berita');
+
+    return view('berita/read', ['berita' => $berita]);
   }
 
   /**

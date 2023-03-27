@@ -17,7 +17,7 @@ class GaleriController extends Controller
    */
   public static function index()
   {
-    $galeris = Galeri::getAll();
+    $galeris = Galeri::all();
 
     return view('galeri/index', ['galeris' => $galeris]);
   }

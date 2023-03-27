@@ -42,8 +42,8 @@ use function Core\routeIs;
       <ul class="menu">
         <li class="sidebar-title">Menu</li>
 
-        <li class="sidebar-item <?= routeIs('/') ? 'active' : '' ?>">
-          <a href="<?= route('/') ?>" class="sidebar-link">
+        <li class="sidebar-item <?= routeIs('/dashboard') ? 'active' : '' ?>">
+          <a href="<?= route('/dashboard') ?>" class="sidebar-link">
             <i class="bi bi-grid-fill"></i>
             <span>Dashboard</span>
           </a>
@@ -90,13 +90,13 @@ use function Core\routeIs;
             <span>Akun</span>
           </a>
           <ul class="submenu <?= routeIs('/user*') ? 'active' : '' ?>">
-            <?php if (Auth::auth()) : ?>
+            <?php if (Auth::user()) : ?>
               <li class="submenu-item <?= routeIs('/user*') ? 'active' : '' ?>">
                 <a href="<?= route('/user') ?>">Akun Saya</a>
               </li>
             <?php endif; ?>
             <li class="submenu-item">
-              <?php if (Auth::auth()) : ?>
+              <?php if (Auth::user()) : ?>
                 <a href="<?= route('/logout') ?>" onclick="sweetconfirm(event, {title: 'Logout', text: 'Apakah Anda yakin?'}); return false;" class="text-danger">Logout</a>
               <?php else : ?>
                 <a href="<?= route('/login') ?>">Login</a>

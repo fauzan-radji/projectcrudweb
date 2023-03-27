@@ -18,6 +18,8 @@ class AuthController extends Controller
 
   public static function login()
   {
+    if (Auth::user()) return redirect('/dashboard');
+
     return view('auth/login');
   }
 
@@ -34,7 +36,7 @@ class AuthController extends Controller
 
     Session::set('username', $username);
     set_success($result['msg']);
-    return redirect('/');
+    return redirect('/dashboard');
   }
 
   public static function logout()

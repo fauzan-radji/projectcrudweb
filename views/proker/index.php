@@ -4,6 +4,7 @@ use Core\Auth;
 
 use function Core\asset;
 use function Core\extend;
+use function Core\formatTime;
 use function Core\route;
 
 function title()
@@ -53,7 +54,7 @@ function main()
               <tr>
                 <td><?= $no++ ?></td>
                 <td><?= $proker['namakeg'] ?></td>
-                <td><?= date('d-m-Y', strtotime($proker['waktukeg'])) ?></td>
+                <td><?= formatTime('d-m-Y', $proker['waktukeg']) ?></td>
                 <td><?= $proker['tempatkeg'] ?></td>
 
                 <td>

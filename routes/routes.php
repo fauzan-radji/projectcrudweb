@@ -53,6 +53,7 @@ define('ROUTES', [
   '/galeri/{id}/destroy' => [GaleriController::class, 'destroy'],
 
   '/berita' => [BeritaController::class, 'index'],
+  '/berita/{id}/read' => [BeritaController::class, 'read'],
   '/berita/create' => [BeritaController::class, 'create'],
   '/berita/store' => [BeritaController::class, 'store'],
   '/berita/{id}' => [BeritaController::class, 'show'],

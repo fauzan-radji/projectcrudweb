@@ -34,7 +34,7 @@ class Auth
     Session::unset();
   }
 
-  public static function auth()
+  public static function user()
   {
     if (!Session::has('username')) return null;
 
@@ -47,6 +47,6 @@ class Auth
 
   public static function is($level)
   {
-    return static::auth() && static::auth()['level'] === $level;
+    return static::user() && static::user()['level'] === $level;
   }
 }
