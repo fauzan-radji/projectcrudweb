@@ -2,13 +2,15 @@
 
 namespace Core;
 
-define('ROOT', $_SERVER['DOCUMENT_ROOT'] . '/projectcrudweb/');
+define('ROOT', dirname(__DIR__) . DIRECTORY_SEPARATOR);
 
 function env($key, $default = '')
 {
   $content = file_get_contents(ROOT . '.env');
-  $content = preg_split('/\r\n/', $content);
+  $content = preg_split('/[\r\n]/', $content);
   foreach ($content as $line) {
+    if (str_starts_with($line, '#') || strlen($line) === 0) continue;
+
     [$k, $v] = explode('=', $line);
     if ($k === $key) return $v;
   }

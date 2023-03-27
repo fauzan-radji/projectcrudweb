@@ -4,7 +4,7 @@ require_once 'routes.php';
 
 function parsePath($path)
 {
-  return '/' . rtrim($path, '/');
+  return '/' . trim($path, '/');
 }
 
 function getController($path)
