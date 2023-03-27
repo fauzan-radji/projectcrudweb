@@ -28,7 +28,7 @@ class UserController extends Controller
   {
     static::authorize('superadmin', 'direktur');
 
-    $user = Auth::auth();
+    $user = Auth::user();
 
     return view('user/show', ['user' => $user]);
   }
@@ -40,7 +40,7 @@ class UserController extends Controller
   {
     static::authorize('superadmin', 'direktur');
 
-    $user = Auth::auth();
+    $user = Auth::user();
 
     return view('user/edit', ['user' => $user]);
   }
@@ -51,7 +51,7 @@ class UserController extends Controller
   public static function update()
   {
     static::authorize('superadmin', 'direktur');
-    $user = Auth::auth();
+    $user = Auth::user();
 
     $nama  = htmlspecialchars($_POST['nama']);
     $username  = htmlspecialchars($_POST['username']);
@@ -86,7 +86,7 @@ class UserController extends Controller
   {
     static::authorize('superadmin', 'direktur');
 
-    $user = Auth::auth();
+    $user = Auth::user();
 
     return view('user/editpass', ['user' => $user]);
   }
@@ -97,7 +97,7 @@ class UserController extends Controller
   public static function updatepass()
   {
     static::authorize('superadmin', 'direktur');
-    $user = Auth::auth();
+    $user = Auth::user();
 
     $oldPassword  = htmlspecialchars($_POST['oldPassword']);
     $newPassword  = htmlspecialchars($_POST['newPassword']);
